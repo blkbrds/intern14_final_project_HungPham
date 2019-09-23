@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -35,6 +35,16 @@
 		6AFD0303231375EE004940FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFD0302231375EE004940FA /* AppDelegate.swift */; };
 		6AFD030A231375EF004940FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6AFD0309231375EF004940FA /* Assets.xcassets */; };
 		6AFD0318231375EF004940FA /* FinalProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFD0317231375EF004940FA /* FinalProjectTests.swift */; };
+		73EBF6B22338C00D005878E0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EBF6B02338C00D005878E0 /* HomeViewController.swift */; };
+		73EBF6B32338C00D005878E0 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73EBF6B12338C00D005878E0 /* HomeViewController.xib */; };
+		73EBF6B62338C017005878E0 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EBF6B42338C017005878E0 /* SearchViewController.swift */; };
+		73EBF6B72338C017005878E0 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73EBF6B52338C017005878E0 /* SearchViewController.xib */; };
+		73EBF6BA2338C024005878E0 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EBF6B82338C024005878E0 /* FavoriteViewController.swift */; };
+		73EBF6BB2338C024005878E0 /* FavoriteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73EBF6B92338C024005878E0 /* FavoriteViewController.xib */; };
+		73EBF6BF2338C9CC005878E0 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EBF6BE2338C9CC005878E0 /* Color.swift */; };
+		73EBF6C12338C9D8005878E0 /* Number.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EBF6C02338C9D8005878E0 /* Number.swift */; };
+		73EBF6C32338C9E1005878E0 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EBF6C22338C9E1005878E0 /* Key.swift */; };
+		73EBF6C72338CFB4005878E0 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EBF6C62338CFB4005878E0 /* RealmManager.swift */; };
 		8882DA0118142BBAD083DDD9 /* Pods_FinalProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5084BD3D925876C8DE2E9504 /* Pods_FinalProject.framework */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +93,16 @@
 		6AFD0313231375EF004940FA /* FinalProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinalProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AFD0317231375EF004940FA /* FinalProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalProjectTests.swift; sourceTree = "<group>"; };
 		6AFD0319231375EF004940FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		73EBF6B02338C00D005878E0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		73EBF6B12338C00D005878E0 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		73EBF6B42338C017005878E0 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		73EBF6B52338C017005878E0 /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
+		73EBF6B82338C024005878E0 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
+		73EBF6B92338C024005878E0 /* FavoriteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteViewController.xib; sourceTree = "<group>"; };
+		73EBF6BE2338C9CC005878E0 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		73EBF6C02338C9D8005878E0 /* Number.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Number.swift; sourceTree = "<group>"; };
+		73EBF6C22338C9E1005878E0 /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
+		73EBF6C62338CFB4005878E0 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		7EB1AD2584DB4F2ED9CCF8A4 /* Pods-FinalProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinalProjectTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FinalProjectTests/Pods-FinalProjectTests.release.xcconfig"; sourceTree = "<group>"; };
 		D72EC1050944689B4414E5C7 /* Pods-FinalProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinalProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FinalProject/Pods-FinalProject.debug.xcconfig"; sourceTree = "<group>"; };
 		DD4A2FBD85737A9282EA2264 /* Pods-FinalProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinalProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-FinalProject/Pods-FinalProject.release.xcconfig"; sourceTree = "<group>"; };
@@ -125,6 +145,9 @@
 				6AF60D072313B31200F5CBA2 /* App.swift */,
 				6AF60D0C2313B35700F5CBA2 /* Errors.swift */,
 				6AF60D152313B35800F5CBA2 /* String.swift */,
+				73EBF6BE2338C9CC005878E0 /* Color.swift */,
+				73EBF6C02338C9D8005878E0 /* Number.swift */,
+				73EBF6C22338C9E1005878E0 /* Key.swift */,
 			);
 			path = Define;
 			sourceTree = "<group>";
@@ -132,6 +155,7 @@
 		6AF60D232313B56B00F5CBA2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				73EBF6C52338CF9B005878E0 /* RealmManager */,
 				6AF60D242313B56B00F5CBA2 /* Session.swift */,
 				6AF60D252313B56B00F5CBA2 /* Schema */,
 				6AF60D672313B56B00F5CBA2 /* API */,
@@ -188,6 +212,7 @@
 		6AF60E242313C13600F5CBA2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				73EBF6C82338D093005878E0 /* Custom */,
 				6AF611522313C13800F5CBA2 /* Base */,
 				6AF60E252313C13600F5CBA2 /* Controller */,
 				6AF611232313C13800F5CBA2 /* Control */,
@@ -198,6 +223,9 @@
 		6AF60E252313C13600F5CBA2 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				73EBF6AF2338BFD8005878E0 /* HomeViewController */,
+				73EBF6AE2338BFD5005878E0 /* SearchViewController */,
+				73EBF6AD2338BFD3005878E0 /* FavoriteViewController */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -249,14 +277,13 @@
 		6AFD0301231375EE004940FA /* FinalProject */ = {
 			isa = PBXGroup;
 			children = (
-				6AFD0302231375EE004940FA /* AppDelegate.swift */,
-				6AFD0309231375EF004940FA /* Assets.xcassets */,
-				6AFD030E231375EF004940FA /* Info.plist */,
-				6AF60D042313B26E00F5CBA2 /* LaunchScreen.storyboard */,
+				73EBF6AA2338BB60005878E0 /* AppDelegate */,
 				6AF60D062313B2EF00F5CBA2 /* Define */,
 				6AF60DD82313B98800F5CBA2 /* Library */,
 				6AF60D232313B56B00F5CBA2 /* Model */,
 				6AF60E242313C13600F5CBA2 /* View */,
+				73EBF6AB2338BB76005878E0 /* Resource */,
+				6AFD030E231375EF004940FA /* Info.plist */,
 			);
 			path = FinalProject;
 			sourceTree = "<group>";
@@ -268,6 +295,65 @@
 				6AFD0319231375EF004940FA /* Info.plist */,
 			);
 			path = FinalProjectTests;
+			sourceTree = "<group>";
+		};
+		73EBF6AA2338BB60005878E0 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				6AFD0302231375EE004940FA /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		73EBF6AB2338BB76005878E0 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				6AF60D042313B26E00F5CBA2 /* LaunchScreen.storyboard */,
+				6AFD0309231375EF004940FA /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		73EBF6AD2338BFD3005878E0 /* FavoriteViewController */ = {
+			isa = PBXGroup;
+			children = (
+				73EBF6B82338C024005878E0 /* FavoriteViewController.swift */,
+				73EBF6B92338C024005878E0 /* FavoriteViewController.xib */,
+			);
+			path = FavoriteViewController;
+			sourceTree = "<group>";
+		};
+		73EBF6AE2338BFD5005878E0 /* SearchViewController */ = {
+			isa = PBXGroup;
+			children = (
+				73EBF6B42338C017005878E0 /* SearchViewController.swift */,
+				73EBF6B52338C017005878E0 /* SearchViewController.xib */,
+			);
+			path = SearchViewController;
+			sourceTree = "<group>";
+		};
+		73EBF6AF2338BFD8005878E0 /* HomeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				73EBF6B02338C00D005878E0 /* HomeViewController.swift */,
+				73EBF6B12338C00D005878E0 /* HomeViewController.xib */,
+			);
+			path = HomeViewController;
+			sourceTree = "<group>";
+		};
+		73EBF6C52338CF9B005878E0 /* RealmManager */ = {
+			isa = PBXGroup;
+			children = (
+				73EBF6C62338CFB4005878E0 /* RealmManager.swift */,
+			);
+			path = RealmManager;
+			sourceTree = "<group>";
+		};
+		73EBF6C82338D093005878E0 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Custom;
 			sourceTree = "<group>";
 		};
 		EDAB884D0E9858125EA92DBE /* Frameworks */ = {
@@ -366,6 +452,9 @@
 			files = (
 				6AFD030A231375EF004940FA /* Assets.xcassets in Resources */,
 				6AF60D052313B26E00F5CBA2 /* LaunchScreen.storyboard in Resources */,
+				73EBF6B72338C017005878E0 /* SearchViewController.xib in Resources */,
+				73EBF6BB2338C024005878E0 /* FavoriteViewController.xib in Resources */,
+				73EBF6B32338C00D005878E0 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,36 +474,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-FinalProject/Pods-FinalProject-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/MVVM-Swift/MVVM.framework",
-				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
-				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftUtils/SwiftUtils.framework",
-				"${BUILT_PRODUCTS_DIR}/SwifterSwift/SwifterSwift.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-FinalProject/Pods-FinalProject-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MVVM.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftUtils.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwifterSwift.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-FinalProject/Pods-FinalProject-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FinalProject/Pods-FinalProject-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FinalProject/Pods-FinalProject-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		6AFD032323139854004940FA /* Swift Lint */ = {
@@ -486,6 +554,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73EBF6B22338C00D005878E0 /* HomeViewController.swift in Sources */,
+				73EBF6C12338C9D8005878E0 /* Number.swift in Sources */,
 				6AF60E0A2313B9C000F5CBA2 /* UIViewExt.swift in Sources */,
 				6AF613B22313C13A00F5CBA2 /* Label.swift in Sources */,
 				6AF60DC42313B56B00F5CBA2 /* Error.swift in Sources */,
@@ -493,6 +563,9 @@
 				6AF613B72313C13A00F5CBA2 /* CollectionView.swift in Sources */,
 				6AFD0303231375EE004940FA /* AppDelegate.swift in Sources */,
 				6AF613B02313C13A00F5CBA2 /* CollectionCell.swift in Sources */,
+				73EBF6B62338C017005878E0 /* SearchViewController.swift in Sources */,
+				73EBF6BF2338C9CC005878E0 /* Color.swift in Sources */,
+				73EBF6C32338C9E1005878E0 /* Key.swift in Sources */,
 				6AF60DC52313B56B00F5CBA2 /* ApiManager.swift in Sources */,
 				6AF60DC72313B56B00F5CBA2 /* Api.swift in Sources */,
 				6AF613B12313C13A00F5CBA2 /* CollectionViewHeaderView.swift in Sources */,
@@ -506,6 +579,8 @@
 				6AF60DC22313B56B00F5CBA2 /* RequestSerializer.swift in Sources */,
 				6AF613CC2313C13A00F5CBA2 /* Button.swift in Sources */,
 				6AF613B32313C13A00F5CBA2 /* ViewController.swift in Sources */,
+				73EBF6C72338CFB4005878E0 /* RealmManager.swift in Sources */,
+				73EBF6BA2338C024005878E0 /* FavoriteViewController.swift in Sources */,
 				6AF613C12313C13A00F5CBA2 /* TableView.swift in Sources */,
 				6AF613C42313C13A00F5CBA2 /* TableCell.swift in Sources */,
 				6AF613C92313C13A00F5CBA2 /* ImageView.swift in Sources */,

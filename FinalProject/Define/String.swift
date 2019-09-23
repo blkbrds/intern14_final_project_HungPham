@@ -18,4 +18,10 @@ extension App {
 }
 
 extension App.String {
+    static let homeTitle = "Home".localized()
+    static let searchTitle = "Search".localized()
+    static let favoriteTitle = "Favorite".localized()
+    static let titleDefault: String = "Title".localized()
+    static let descriptionDefault: String = "Description".localized()
+    static let catelogyStr = "Catelogy".localized()
 }
