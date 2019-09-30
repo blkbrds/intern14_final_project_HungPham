@@ -18,6 +18,7 @@ extension App.String {
     static let searchTitle = "Search".localized()
     static let favoriteTitle = "Favorite".localized()
     static let topTrending = "Top 10 Trending".localized()
+    static let trendingVideos = "Top Trending".localized()
     static let channelTitle = "Channels".localized()
     static let titleDefault: String = "Title".localized()
     static let descriptionDefault: String = "Description".localized()

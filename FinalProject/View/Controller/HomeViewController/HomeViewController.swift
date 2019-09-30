@@ -101,6 +101,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
                 else {
                     fatalError("Invalid view type")
             }
+            headerView.delegate = self
             if indexPath.section == 0 {
                 headerView.titleHeaderLabel.text = App.String.topTrending
             } else {
@@ -142,5 +143,12 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             return 0.0
         }
         return 10
+    }
+}
+
+extension HomeViewController: TitleHeaderViewDelegate {
+
+    func tapMore(_ view: TitleHeader, sender: UIButton) {
+        navigationController?.pushViewController(TrendingLoadMoreViewController(), animated: true)
     }
 }

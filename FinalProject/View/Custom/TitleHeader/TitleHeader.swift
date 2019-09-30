@@ -8,15 +8,21 @@
 
 import UIKit
 
+protocol TitleHeaderViewDelegate: class {
+    func tapMore(_ view: TitleHeader, sender: UIButton)
+}
+
 final class TitleHeader: UICollectionReusableView {
 
     @IBOutlet weak var titleHeaderLabel: UILabel!
+
+    weak var delegate: TitleHeaderViewDelegate?
 
     override func awakeFromNib() {
         super.awakeFromNib()
     }
 
-    @IBAction private func moreButton(_ sender: Any) {
-        print("button Did Click !")
+    @IBAction private func moreButton(_ sender: UIButton) {
+        delegate?.tapMore(self, sender: sender)
     }
 }
