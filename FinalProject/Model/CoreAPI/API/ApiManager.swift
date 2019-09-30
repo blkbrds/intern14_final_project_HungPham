@@ -23,6 +23,15 @@ extension ApiManager.Path {
         let keyID: String
         var urlString: String { return Snippet.path + "part=snippet,contentDetails,statistics&chart=\(chart)&regionCode=\(regionCode)&maxResults=\(maxResults)&key=\(keyID)" }
     }
+
+    struct ChannelSnippet: ApiPath {
+        static var path: String { return baseURL / "v3/search?" }
+        let pageToken: String
+        let maxResults: Int
+        let keySearch: String
+        let keyID: String
+        var urlString: String { return ChannelSnippet.path + "part=snippet&pageToken=\(pageToken)&maxResults=\(maxResults)&order=relevance&q=\(keySearch)&key=\(keyID)" }
+    }
 }
 
 protocol URLStringConvertible {

@@ -42,11 +42,18 @@ final class HomeViewController: UIViewController {
     }
 
     func configData() {
-        viewmodel.loadData { (done) in
+        viewmodel.loadDataTrending { (done) in
             if done {
                 self.updateUI()
             } else {
-                print("Can't Load data!")
+                print("Can't Load data Trending!")
+            }
+        }
+        viewmodel.loadDataChannel { (done) in
+            if done {
+                self.updateUI()
+            } else {
+                print("Can't Load data Channel!")
             }
         }
     }
@@ -64,21 +71,24 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if section == 0 {
-            return viewmodel.numberOfItems(in: section)
+            return viewmodel.numberOfItemsTrending(in: section)
         } else {
-            return 10
+            return viewmodel.numberOfItemsChannel(in: section)
         }
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.section == 0 {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell1", for: indexPath) as? TrendingCell else { return UICollectionViewCell() }
-            let myTrending = viewmodel.getMusic(with: indexPath)
+            let myTrending = viewmodel.getTrending(with: indexPath)
             let cellViewModel = TrendingCellViewModel(myTrending: myTrending)
             cell.viewmodel = cellViewModel
             return cell
         } else {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell2", for: indexPath) as? ChannelCell else { return UICollectionViewCell() }
+            let myChannel = viewmodel.getChannel(with: indexPath)
+            let cellViewModel = ChannelCellModel(myChannel: myChannel)
+            cell.viewmodel = cellViewModel
             return cell
         }
     }

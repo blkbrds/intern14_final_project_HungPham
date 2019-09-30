@@ -23,6 +23,7 @@ extension App.String {
     static let descriptionDefault: String = "Description".localized()
     static let catelogyStr = "Catelogy".localized()
     static let trendingKeySearch = "mostPopular".localized()
+    static let channelKeySearch = "trailer".localized()
     static let regionCode = "VN".localized()
     static let maxResults = "maxResults".localized()
     static let token = "CAoQAA".localized()

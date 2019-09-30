@@ -55,6 +55,10 @@
                 <constraint firstAttribute="bottom" secondItem="01R-3h-vy5" secondAttribute="bottom" constant="5.5" id="tbd-p5-7s9"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <connections>
+                <outlet property="titleLabel" destination="STb-0j-kQo" id="dwP-bv-WQ4"/>
+                <outlet property="videoImage" destination="01R-3h-vy5" id="Z9O-Kd-7fy"/>
+            </connections>
         </collectionViewCell>
     </objects>
     <resources>
