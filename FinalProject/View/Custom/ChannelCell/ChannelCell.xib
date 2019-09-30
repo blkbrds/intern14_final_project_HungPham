@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ChannelCell" customModule="FinalProject" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="49.5"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="49.5"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-youtube" translatesAutoresizingMaskIntoConstraints="NO" id="01R-3h-vy5">
+                        <rect key="frame" x="20" y="4" width="50" height="40"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" red="1" green="0.03624573524" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="0.5"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="20"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cô Thắm Không Về (DinhLong Remix) - Phát Hồ x JokeS Bii x Sinike | Nhạc Trẻ TikTok Gây Nghiện 2019" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="STb-0j-kQo">
+                        <rect key="frame" x="78" y="4" width="336" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="K1c-5l-fEq"/>
+                            <constraint firstAttribute="width" constant="336" id="S7E-C8-fsf"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="STb-0j-kQo" secondAttribute="trailing" id="1BO-eO-zwF"/>
+                <constraint firstItem="01R-3h-vy5" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="4" id="3og-vw-4Wo"/>
+                <constraint firstAttribute="bottom" secondItem="STb-0j-kQo" secondAttribute="bottom" constant="5.5" id="62Y-5Q-jaH"/>
+                <constraint firstItem="STb-0j-kQo" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="4" id="Axi-N0-seh"/>
+                <constraint firstItem="STb-0j-kQo" firstAttribute="leading" secondItem="01R-3h-vy5" secondAttribute="trailing" constant="8" id="Xid-PR-ziu"/>
+                <constraint firstItem="01R-3h-vy5" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="jxp-Z3-IhV"/>
+                <constraint firstAttribute="bottom" secondItem="01R-3h-vy5" secondAttribute="bottom" constant="5.5" id="tbd-p5-7s9"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="ic-youtube" width="960" height="540"/>
+    </resources>
+</document>
