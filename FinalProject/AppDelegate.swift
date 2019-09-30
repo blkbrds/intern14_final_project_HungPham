@@ -18,11 +18,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = .white
         window?.makeKeyAndVisible()
-        pushViewController()
+        configTabbar()
 
         return true
     }
-    func pushViewController() {
+    func configTabbar() {
         let home = HomeViewController()
         let homeNaviVC = UINavigationController(rootViewController: home)
         homeNaviVC.tabBarItem = UITabBarItem(title: "HOME", image: #imageLiteral(resourceName: "ic-home"), selectedImage: #imageLiteral(resourceName: "ic-home-filled"))
