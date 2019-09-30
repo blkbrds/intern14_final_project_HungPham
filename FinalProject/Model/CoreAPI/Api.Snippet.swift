@@ -3,13 +3,47 @@ import UIKit
 import RealmSwift
 
 extension ApiManager.Snippet {
+
     struct TrendingResult {
         var myTrending: [Trending] = []
+    }
+
+    struct ChannelResult {
+        var myChannel: [Channel] = []
     }
 
     struct QuerryString {
         func getTrendingPath() -> String {
             return ApiManager.Path.Snippet(chart: App.String.trendingKeySearch, regionCode: App.String.regionCode, maxResults: App.Number.maxOfResultTrending, keyID: App.KeyUser.keyID).urlString
+        }
+
+        func getChannelPath() -> String {
+            return ApiManager.Path.ChannelSnippet(pageToken: App.String.token, maxResults: App.Number.maxOfResultTrending, keySearch: App.String.channelKeySearch, keyID: App.KeyUser.keyID).urlString
+        }
+    }
+
+    static func getChannelData(completion: @escaping APICompletion<ChannelResult>) {
+        let urlString = QuerryString().getChannelPath()
+
+        API.shared().request(urlString: urlString) { (result) in
+            switch result {
+            case .success(let data):
+                if let data = data {
+                    let json = data.convertToJSON()
+                    guard let items = json["items"] as? [JSON] else { return }
+                    var myChannels: [Channel] = []
+                    for dic in items {
+                        let myChannel = Channel(dic: dic)
+                        myChannels.append(myChannel)
+                    }
+                    let channelReuslt = ChannelResult(myChannel: myChannels)
+                    completion(.success(channelReuslt))
+                } else {
+                    completion(.failure(.error("Can't Format Data!")))
+                }
+            case .failure(let error):
+                completion(.failure(error))
+            }
         }
     }
 

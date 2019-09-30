@@ -1,12 +1,10 @@
 import Foundation
 import RealmSwift
 
-final class Trending: Object {
+final class Channel: Object {
     typealias JSON = [String: Any]
 
     @objc dynamic var title: String = ""
-    @objc dynamic var viewCount: String = ""
-    @objc dynamic var duration: String = ""
     @objc dynamic var imageURL: String = ""
 
     convenience init(dic: JSON) {
@@ -16,19 +14,11 @@ final class Trending: Object {
             schema["title"] = title
 
             if let thumbnails = snippet["thumbnails"] as? JSON {
-                if let standard = thumbnails["standard"] as? JSON {
-                    let imageURL = standard["url"]
+                if let high = thumbnails["high"] as? JSON {
+                    let imageURL = high["url"]
                     schema["imageURL"] = imageURL
                 }
             }
-        }
-        if let contentDetails = dic["contentDetails"] as? JSON {
-            let duration = contentDetails["duration"]
-            schema["duration"] = duration
-        }
-        if let statistics = dic["statistics"] as? JSON {
-            let viewCount = statistics["viewCount"]
-            schema["viewCount"] = viewCount
         }
         self.init(value: schema)
     }
