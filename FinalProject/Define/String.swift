@@ -9,15 +9,11 @@ import Foundation
 
 extension App {
 
-    /**
-     This file defines all localizable strings which are used in this application.
-     Please localize defined strings in `Resources/Localizable.strings`.
-     */
-
     struct String { }
 }
 
 extension App.String {
+
     static let homeTitle = "YOUTUBE".localized()
     static let searchTitle = "Search".localized()
     static let favoriteTitle = "Favorite".localized()

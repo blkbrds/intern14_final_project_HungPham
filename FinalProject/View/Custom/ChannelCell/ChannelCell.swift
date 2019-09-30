@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ChannelCell: UICollectionViewCell {
+final class ChannelCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()

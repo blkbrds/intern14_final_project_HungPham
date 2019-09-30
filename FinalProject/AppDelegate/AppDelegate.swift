@@ -22,7 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         return true
     }
+
     func configTabbar() {
+
         let home = HomeViewController()
         let homeNaviVC = UINavigationController(rootViewController: home)
         homeNaviVC.tabBarItem = UITabBarItem(title: "HOME", image: #imageLiteral(resourceName: "ic-home"), selectedImage: #imageLiteral(resourceName: "ic-home-filled"))
@@ -40,6 +42,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         tabBarController.viewControllers = viewControllers
         tabBarController.tabBar.tintColor = .red
         window?.rootViewController = tabBarController
-
     }
 }

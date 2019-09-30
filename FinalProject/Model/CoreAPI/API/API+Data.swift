@@ -2,6 +2,7 @@ import Foundation
 
 typealias JSON = [String: Any]
 extension Data {
+
     func convertToJSON() -> [String: Any] {
         var json: [String: Any] = [:]
         do {

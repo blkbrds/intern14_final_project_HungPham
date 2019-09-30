@@ -14,6 +14,6 @@ extension App {
 }
 
 extension App.Number {
-    static let maxOfResultTrending = 10
 
+    static let maxOfResultTrending = 10
 }

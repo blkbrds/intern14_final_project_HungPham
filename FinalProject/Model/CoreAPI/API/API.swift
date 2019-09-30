@@ -2,6 +2,7 @@ import Foundation
 
 // Defines
 enum APIError: Error {
+
     case error(String)
     case errorURL
     case errorDataFormat
@@ -21,6 +22,7 @@ enum APIError: Error {
 typealias APICompletion<T> = (Result<T, APIError>) -> Void
 
 enum APIResult {
+
     case success(Data?)
     case failure(APIError)
 }

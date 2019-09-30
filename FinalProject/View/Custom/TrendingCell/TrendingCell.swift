@@ -16,15 +16,15 @@ class TrendingCell: UICollectionViewCell {
         videoImage.sd_setImage(with: URL(string: viewmodel.imageURL))
     }
 
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var videoImage: UIImageView!
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var timeLabel: UILabel!
+    @IBOutlet private weak var videoImage: UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
     }
 
-    @IBAction func playButton(_ sender: Any) {
+    @IBAction private func playButton(_ sender: Any) {
         print("button Did Click !")
     }
 

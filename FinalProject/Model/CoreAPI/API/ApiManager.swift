@@ -14,6 +14,7 @@ final class ApiManager {
 }
 
 extension ApiManager.Path {
+
     struct Snippet: ApiPath {
         static var path: String { return baseURL / "v3/videos?" }
         let chart: String

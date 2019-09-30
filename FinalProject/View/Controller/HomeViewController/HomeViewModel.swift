@@ -3,11 +3,11 @@ import UIKit
 import RealmSwift
 
 final class HomeViewModel {
-    
+
     var myTrendings: [Trending] = []
-    
+
     // Mark : - Load Data From API
-    func loadData(completion: @escaping (Bool) -> ()) {
+    func loadData(completion: @escaping (Bool) -> Void) {
         ApiManager.Snippet.getTrendingData() { (result) in
             switch result {
             case .success(let trendingResult):
@@ -20,7 +20,7 @@ final class HomeViewModel {
             }
         }
     }
-    
+
     func saveData(objects: [Trending]) {
         for item in objects {
             myTrendings.append(item)
@@ -32,7 +32,7 @@ extension HomeViewModel {
     func numberOfItems(in section: Int) -> Int {
         return myTrendings.count
     }
-    
+
     func getMusic(with indexPath: IndexPath) -> Trending {
         return myTrendings[indexPath.row]
     }

@@ -46,13 +46,13 @@ extension RealmManager {
 
     func add<T: Object>(object: T, completion: ((RealmResult) -> Void)? = nil) {
         write({
-            realm?.add(object, update: true)
+            realm?.add(object)
         }, completion: completion)
     }
 
     func add<T: Object>(objects: [T], completion: ((RealmResult) -> Void)? = nil) {
         write({
-            realm?.add(objects, update: true)
+            realm?.add(objects)
         }, completion: completion)
     }
 

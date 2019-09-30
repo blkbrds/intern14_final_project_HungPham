@@ -8,14 +8,15 @@
 
 import UIKit
 
-class TitleHeader: UICollectionReusableView {
+final class TitleHeader: UICollectionReusableView {
 
     @IBOutlet weak var titleHeaderLabel: UILabel!
+
     override func awakeFromNib() {
         super.awakeFromNib()
     }
 
-    @IBAction func moreButton(_ sender: Any) {
+    @IBAction private func moreButton(_ sender: Any) {
         print("button Did Click !")
     }
 }
