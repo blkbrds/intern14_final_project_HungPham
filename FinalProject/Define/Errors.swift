@@ -13,11 +13,11 @@ typealias Errors = App.Errors
 extension App {
 
     enum Errors: Error {
-
         case indexOutOfBound
         case initFailure
     }
 }
+
 extension App.Errors: CustomStringConvertible {
 
      var description: String {
