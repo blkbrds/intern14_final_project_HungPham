@@ -8,6 +8,11 @@ extension ApiManager.Snippet {
         var myTrending: [Trending] = []
     }
 
+    struct TrendingLoadMoreResult {
+        var myTrending: [Trending] = []
+        var pageToken: String
+    }
+
     struct ChannelResult {
         var myChannel: [Channel] = []
     }
@@ -38,6 +43,31 @@ extension ApiManager.Snippet {
                     }
                     let channelReuslt = ChannelResult(myChannel: myChannels)
                     completion(.success(channelReuslt))
+                } else {
+                    completion(.failure(.error("Can't Format Data!")))
+                }
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
+
+    static func getTrendingLoadMoreData(pageToken: String, completion: @escaping APICompletion<TrendingLoadMoreResult>) {
+        let urlString = QuerryString().getTrendingPath() + "&pageToken=\(pageToken)"
+        API.shared().request(urlString: urlString) { (result) in
+            switch result {
+            case .success(let data):
+                if let data = data {
+                    let json = data.convertToJSON()
+                    guard let nextPageToken = json["nextPageToken"] as? String else { return }
+                    guard let items = json["items"] as? [JSON] else { return }
+                    var myTrendingds: [Trending] = []
+                    for dic in items {
+                        let myTrending = Trending(dic: dic)
+                        myTrendingds.append(myTrending)
+                    }
+                    let trendingLoadMoreResult = TrendingLoadMoreResult(myTrending: myTrendingds, pageToken: nextPageToken)
+                    completion(.success(trendingLoadMoreResult))
                 } else {
                     completion(.failure(.error("Can't Format Data!")))
                 }
