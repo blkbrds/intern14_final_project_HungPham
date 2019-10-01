@@ -33,7 +33,7 @@ final class HomeViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
 
-        let titleHeader = UINib(nibName: "TitleHeader", bundle: nil)
+        let titleHeader = UINib(nibName: "TitleHeaderView", bundle: nil)
         collectionView.register(titleHeader, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "titleheader")
     }
 
@@ -97,7 +97,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         switch kind {
         case UICollectionView.elementKindSectionHeader:
             guard
-                let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "titleheader", for: indexPath) as? TitleHeader
+                let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "titleheader", for: indexPath) as? TitleHeaderView
                 else {
                     fatalError("Invalid view type")
             }
@@ -148,7 +148,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
 
 extension HomeViewController: TitleHeaderViewDelegate {
 
-    func tapMore(_ view: TitleHeader, sender: UIButton) {
+    func tapMore(_ titleHeaderView: TitleHeaderView, sender: UIButton) {
         navigationController?.pushViewController(TrendingLoadMoreViewController(), animated: true)
     }
 }

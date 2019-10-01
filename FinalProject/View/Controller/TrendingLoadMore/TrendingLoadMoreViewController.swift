@@ -25,19 +25,18 @@ final class TrendingLoadMoreViewController: ViewController {
     }
 
     func getData(isLoadMore: Bool) {
-        isLoadingAPI = true
-        viewmodel.getDataTrending(isLoadMore: isLoadMore) { (done) in
-            self.isLoadingAPI = false
-            if done {
-                self.updateUI()
-            } else {
-                print("Can't Load More Data!")
+        if isLoadingAPI != true {
+            isLoadingAPI = true
+            viewmodel.getDataTrending(isLoadMore: isLoadMore) { [weak self] done in
+                guard let this = self else { return }
+                this.isLoadingAPI = false
+                if done {
+                    this.collectionView.reloadData()
+                } else {
+                    print("aaaa aaaa aaaa")
+                }
             }
         }
-    }
-
-    func updateUI() {
-        collectionView.reloadData()
     }
 }
 

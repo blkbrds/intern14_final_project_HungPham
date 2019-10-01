@@ -14,18 +14,12 @@ final class TrendingLoadMoreViewModel {
                 if !isLoadMore {
                     self.myTrendings.removeAll()
                 }
-                self.saveDataTrending(objects: trendingLoadMoreResult.myTrending)
+                self.myTrendings.append(contentsOf: trendingLoadMoreResult.myTrending)
                 completion(true)
             case .failure(let error):
                 print(error.localizedDescription)
                 completion(false)
             }
-        }
-    }
-
-    func saveDataTrending(objects: [Trending]) {
-        for item in objects {
-            myTrendings.append(item)
         }
     }
 }
