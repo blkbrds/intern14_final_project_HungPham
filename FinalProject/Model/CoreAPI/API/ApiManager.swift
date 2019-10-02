@@ -32,6 +32,12 @@ extension ApiManager.Path {
         let keyID: String
         var urlString: String { return ChannelSnippet.path + "part=snippet&pageToken=\(pageToken)&maxResults=\(maxResults)&order=relevance&q=\(keySearch)&key=\(keyID)" }
     }
+
+    struct CommentSnippet: ApiPath {
+        static var path: String { return baseURL / "v3/commentThreads?" }
+        let keyID: String
+        var urlString: String { return CommentSnippet.path + "part=snippet&key=\(keyID)" }
+    }
 }
 
 protocol URLStringConvertible {

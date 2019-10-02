@@ -1,11 +1,3 @@
-//
-//  HomeViewController.swift
-//  FinalProject
-//
-//  Created by PCI0010 on 9/30/19.
-//  Copyright © 2019 Asiantech. All rights reserved.
-//
-
 import UIKit
 
 final class HomeViewController: UIViewController {
@@ -24,7 +16,7 @@ final class HomeViewController: UIViewController {
         title = "YOUTUBE"
         navigationController?.navigationBar.backgroundColor = .red
 
-        let catagoryButton = UIBarButtonItem(image: UIImage(named: "ic-category"), style: .plain, target: self, action: #selector(buttonDidClick))
+        let catagoryButton = UIBarButtonItem(image: #imageLiteral(resourceName: "ic-category"), style: .plain, target: self, action: #selector(buttonDidClick))
         catagoryButton.tintColor = UIColor.red
         navigationItem.rightBarButtonItem = catagoryButton
 
@@ -82,14 +74,24 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell1", for: indexPath) as? TrendingCell else { return UICollectionViewCell() }
             let myTrending = viewmodel.getTrending(with: indexPath)
             let cellViewModel = TrendingCellViewModel(myTrending: myTrending)
-            cell.viewmodel = cellViewModel
+            cell.viewModel = cellViewModel
             return cell
         } else {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell2", for: indexPath) as? ChannelCell else { return UICollectionViewCell() }
             let myChannel = viewmodel.getChannel(with: indexPath)
             let cellViewModel = ChannelCellModel(myChannel: myChannel)
-            cell.viewmodel = cellViewModel
+            cell.viewModel = cellViewModel
             return cell
+        }
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.section == 0 {
+            let vc = DetailViewController()
+            vc.viewModel = DetailViewModel(video: viewmodel.myTrendings[indexPath.row])
+            navigationController?.pushViewController(vc, animated: true)
+        } else {
+            print("Did Click !")
         }
     }
 

@@ -47,9 +47,6 @@
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qo3-5x-nfx">
                         <rect key="frame" x="76" y="56" width="48" height="48"/>
                         <state key="normal" image="ic-play-video"/>
-                        <connections>
-                            <action selector="playButton:" destination="gTV-IL-0wX" eventType="touchUpInside" id="6cn-Rk-gTb"/>
-                        </connections>
                     </button>
                 </subviews>
             </view>

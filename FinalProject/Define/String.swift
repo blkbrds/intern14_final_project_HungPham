@@ -28,4 +28,6 @@ extension App.String {
     static let regionCode = "VN".localized()
     static let maxResults = "maxResults".localized()
     static let token = "CAoQAA".localized()
+    static let detailTitle = "Video Detail".localized()
+    static let playVideo = "Play Video".localized()
 }

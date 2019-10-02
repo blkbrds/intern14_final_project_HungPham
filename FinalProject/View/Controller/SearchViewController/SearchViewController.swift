@@ -10,6 +10,8 @@ import UIKit
 
 final class SearchViewController: UIViewController {
 
+    @IBOutlet private weak var tableView: UITableView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configUI()
@@ -18,5 +20,6 @@ final class SearchViewController: UIViewController {
     func configUI() {
         title = "SEARCH"
         navigationController?.navigationBar.backgroundColor = .red
+
     }
 }

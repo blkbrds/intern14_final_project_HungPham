@@ -18,6 +18,11 @@ extension ApiManager.Snippet {
     }
 
     struct QuerryString {
+
+        func getCommentPath() -> String {
+            return ApiManager.Path.CommentSnippet(keyID: App.KeyUser.keyID).urlString
+        }
+
         func getTrendingPath() -> String {
             return ApiManager.Path.Snippet(chart: App.String.trendingKeySearch, regionCode: App.String.regionCode, maxResults: App.Number.maxOfResultTrending, keyID: App.KeyUser.keyID).urlString
         }
