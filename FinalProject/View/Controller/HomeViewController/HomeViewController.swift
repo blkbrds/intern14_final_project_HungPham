@@ -1,16 +1,13 @@
-//
-//  HomeViewController.swift
-//  FinalProject
-//
-//  Created by PCI0010 on 9/30/19.
-//  Copyright © 2019 Asiantech. All rights reserved.
-//
-
 import UIKit
+
+protocol HomeViewControllerDelegate: class {
+    func idVideo(_ homeView: HomeViewController, needforPerform videoID: Trending)
+}
 
 final class HomeViewController: UIViewController {
 
     var viewmodel = HomeViewModel()
+    weak var delegate: HomeViewControllerDelegate?
 
     @IBOutlet private weak var collectionView: UICollectionView!
 
@@ -90,6 +87,17 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             let cellViewModel = ChannelCellModel(myChannel: myChannel)
             cell.viewmodel = cellViewModel
             return cell
+        }
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.section == 0 {
+            let vc = DetailViewController()
+            vc.viewModel = DetailViewModel(video: viewmodel.myTrendings[indexPath.row])
+            navigationController?.pushViewController(vc, animated: true)
+            delegate?.idVideo(self, needforPerform: viewmodel.myTrendings[indexPath.row])
+        } else {
+            print("Did Click !")
         }
     }
 
