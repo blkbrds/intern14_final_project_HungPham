@@ -1,13 +1,8 @@
 import UIKit
 
-protocol HomeViewControllerDelegate: class {
-    func idVideo(_ homeView: HomeViewController, needforPerform videoID: Trending)
-}
-
 final class HomeViewController: UIViewController {
 
     var viewmodel = HomeViewModel()
-    weak var delegate: HomeViewControllerDelegate?
 
     @IBOutlet private weak var collectionView: UICollectionView!
 
@@ -21,7 +16,7 @@ final class HomeViewController: UIViewController {
         title = "YOUTUBE"
         navigationController?.navigationBar.backgroundColor = .red
 
-        let catagoryButton = UIBarButtonItem(image: UIImage(named: "ic-category"), style: .plain, target: self, action: #selector(buttonDidClick))
+        let catagoryButton = UIBarButtonItem(image: #imageLiteral(resourceName: "ic-category"), style: .plain, target: self, action: #selector(buttonDidClick))
         catagoryButton.tintColor = UIColor.red
         navigationItem.rightBarButtonItem = catagoryButton
 
@@ -79,13 +74,13 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell1", for: indexPath) as? TrendingCell else { return UICollectionViewCell() }
             let myTrending = viewmodel.getTrending(with: indexPath)
             let cellViewModel = TrendingCellViewModel(myTrending: myTrending)
-            cell.viewmodel = cellViewModel
+            cell.viewModel = cellViewModel
             return cell
         } else {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell2", for: indexPath) as? ChannelCell else { return UICollectionViewCell() }
             let myChannel = viewmodel.getChannel(with: indexPath)
             let cellViewModel = ChannelCellModel(myChannel: myChannel)
-            cell.viewmodel = cellViewModel
+            cell.viewModel = cellViewModel
             return cell
         }
     }
@@ -95,7 +90,6 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             let vc = DetailViewController()
             vc.viewModel = DetailViewModel(video: viewmodel.myTrendings[indexPath.row])
             navigationController?.pushViewController(vc, animated: true)
-            delegate?.idVideo(self, needforPerform: viewmodel.myTrendings[indexPath.row])
         } else {
             print("Did Click !")
         }

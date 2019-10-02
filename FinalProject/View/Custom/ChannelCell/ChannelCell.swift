@@ -10,16 +10,16 @@ import UIKit
 
 final class ChannelCell: UICollectionViewCell {
 
-    var viewmodel: ChannelCellModel? {
+    var viewModel: ChannelCellModel? {
         didSet {
             updateUI()
         }
     }
 
     func updateUI() {
-        guard let viewmodel = viewmodel else { return }
-        titleLabel.text = viewmodel.title
-        videoImage.sd_setImage(with: URL(string: viewmodel.imageURL))
+        guard let viewModel = viewModel else { return }
+        titleLabel.text = viewModel.title
+        videoImage.sd_setImage(with: URL(string: viewModel.imageURL))
     }
 
     @IBOutlet private weak var titleLabel: UILabel!

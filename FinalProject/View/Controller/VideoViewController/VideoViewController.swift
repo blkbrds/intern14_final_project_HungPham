@@ -8,12 +8,12 @@
 import YoutubePlayer_in_WKWebView
 import UIKit
 
-class VideoViewController: UIViewController {
+final class VideoViewController: UIViewController {
 
     var videoID: String = ""
 
-    @IBOutlet weak var closeButton: UIButton!
-    @IBOutlet weak var playerView: WKYTPlayerView!
+    @IBOutlet private weak var closeButton: UIButton!
+    @IBOutlet private weak var playerView: WKYTPlayerView!
 
     override func viewDidLoad() {
         super.viewDidLoad()

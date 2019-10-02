@@ -5,7 +5,7 @@ import RealmSwift
 extension ApiManager.Snippet {
 
     struct CommentResult {
-        var myComment: [Comment] = []
+        var myComments: [Comment] = []
     }
 
     static func getCommentData(videoId: String, completion: @escaping APICompletion<CommentResult>) {
@@ -21,7 +21,7 @@ extension ApiManager.Snippet {
                         let myComment = Comment(dic: dic)
                         myComments.append(myComment)
                     }
-                    let commentResult = CommentResult(myComment: myComments)
+                    let commentResult = CommentResult(myComments: myComments)
                     completion(.success(commentResult))
                 } else {
                     completion(.failure(.error("Can't Format Data Comment!")))

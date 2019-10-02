@@ -23,15 +23,6 @@ final class DetailViewController: UIViewController {
     @IBOutlet private weak var likeLabel: UILabel!
     @IBOutlet private weak var dislikeLabel: UILabel!
     @IBOutlet private weak var descriptionLabel: UILabel!
-    @IBOutlet private weak var authorImage: UIImageView!
-    @IBOutlet private weak var authorName: UILabel!
-    @IBOutlet private weak var authorText: UILabel!
-    @IBOutlet private weak var authorImageView2: UIImageView!
-    @IBOutlet private weak var authorImageView3: UIImageView!
-    @IBOutlet private weak var authorName2: UILabel!
-    @IBOutlet private weak var authorText2: UILabel!
-    @IBOutlet private weak var authorName3: UILabel!
-    @IBOutlet private weak var authorText3: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,22 +38,9 @@ final class DetailViewController: UIViewController {
     }
 
     func configData() {
-        viewModel.getDataComment { [weak self] (done) in
-            guard let this = self else { return }
+        viewModel.getDataComment { done in
             if done {
-                if this.viewModel.myComment.isNotEmpty {
-                    this.authorName.text = this.viewModel.myComment[0].authorDisplayName
-                    this.authorText.text = this.viewModel.myComment[0].textOriginal
-                    this.authorImage.sd_setImage(with: URL(string: this.viewModel.myComment[0].authorProfileImageUrl))
-
-                    this.authorName2.text = this.viewModel.myComment[1].authorDisplayName
-                    this.authorText2.text = this.viewModel.myComment[1].textOriginal
-                    this.authorImageView2.sd_setImage(with: URL(string: this.viewModel.myComment[1].authorProfileImageUrl))
-
-                    this.authorName3.text = this.viewModel.myComment[2].authorDisplayName
-                    this.authorText3.text = this.viewModel.myComment[2].textOriginal
-                    this.authorImageView3.sd_setImage(with: URL(string: this.viewModel.myComment[2].authorProfileImageUrl))
-                }
+                self.tableView.reloadData()
             } else {
                 print("Can't Load Data!")
             }
@@ -73,15 +51,15 @@ final class DetailViewController: UIViewController {
         title = App.String.detailTitle
         navigationController?.navigationBar.backgroundColor = .red
 
-        tableView.register(UINib(nibName: "DetailInfoCell", bundle: nil), forCellReuseIdentifier: "cell4")
+        tableView.register(UINib(nibName: "CommentCell", bundle: nil), forCellReuseIdentifier: "cell5")
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.estimatedRowHeight = 100
+        tableView.rowHeight = UITableView.automaticDimension
 
-        let catagoryButton = UIBarButtonItem(image: UIImage(named: "ic-heart"), style: .plain, target: self, action: #selector(buttonDidClick))
-        catagoryButton.tintColor = UIColor.red
-        navigationItem.rightBarButtonItem = catagoryButton
-
-        authorImage.layer.cornerRadius = 20
-        authorImageView2.layer.cornerRadius = 20
-        authorImageView3.layer.cornerRadius = 20
+        let favoriteButton = UIBarButtonItem(image: #imageLiteral(resourceName: "ic-heart"), style: .plain, target: self, action: #selector(buttonDidClick))
+        favoriteButton.tintColor = UIColor.red
+        navigationItem.rightBarButtonItem = favoriteButton
     }
 
     @objc func buttonDidClick() {
@@ -90,12 +68,34 @@ final class DetailViewController: UIViewController {
 
     func configThumbnail() {
         videoImage.sd_setImage(with: URL(string: viewModel.imageURL))
-        timeLabel.text = viewModel.duration.replacingOccurrences(of: "PT", with: "").replacingOccurrences(of: "H", with: ":").replacingOccurrences(of: "M", with: ":").replacingOccurrences(of: "S", with: "")
+        timeLabel.text = viewModel.duration.replacingOccurrences(of: "PT", with: "")
+            .replacingOccurrences(of: "H", with: ":")
+            .replacingOccurrences(of: "M", with: ":")
+            .replacingOccurrences(of: "S", with: "")
         titleLabel.text = viewModel.title
         viewCountLabel.text = viewModel.viewCount + " views"
         likeLabel.text = viewModel.likeCount + " Like"
         dislikeLabel.text = viewModel.dislikeCount + " Dislike"
         publicDateLabel.text = viewModel.publishedAt
         descriptionLabel.text = viewModel.descriptionDetail
+    }
+}
+
+extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.numberOfItemsTrending(in: section)
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell5", for: indexPath) as? CommentCell else { return UITableViewCell() }
+        let myComments = viewModel.getComment(with: indexPath)
+        let cellViewModel = CommentCellModel(myVideo: myComments)
+        cell.viewModel = cellViewModel
+        return cell
+    }
+
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Comments :"
     }
 }

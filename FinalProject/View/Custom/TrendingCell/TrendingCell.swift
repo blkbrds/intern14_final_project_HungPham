@@ -3,17 +3,20 @@ import UIKit
 
 class TrendingCell: UICollectionViewCell {
 
-    var viewmodel: TrendingCellViewModel? {
+    var viewModel: TrendingCellViewModel? {
         didSet {
             updateUI()
         }
     }
 
     func updateUI() {
-        guard let viewmodel = viewmodel else { return }
-        titleLabel.text = viewmodel.title
-        timeLabel.text = viewmodel.duration.replacingOccurrences(of: "PT", with: "").replacingOccurrences(of: "H", with: ":").replacingOccurrences(of: "M", with: ":").replacingOccurrences(of: "S", with: "")
-        videoImage.sd_setImage(with: URL(string: viewmodel.imageURL))
+        guard let viewModel = viewModel else { return }
+        titleLabel.text = viewModel.title
+        timeLabel.text = viewModel.duration.replacingOccurrences(of: "PT", with: "")
+            .replacingOccurrences(of: "H", with: ":")
+            .replacingOccurrences(of: "M", with: ":")
+            .replacingOccurrences(of: "S", with: "")
+        videoImage.sd_setImage(with: URL(string: viewModel.imageURL))
     }
 
     @IBOutlet private weak var titleLabel: UILabel!
