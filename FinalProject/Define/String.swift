@@ -14,6 +14,7 @@ extension App {
 
 extension App.String {
 
+    static let commentHeader = "Comments :".localized()
     static let homeTitle = "YOUTUBE".localized()
     static let searchTitle = "Search".localized()
     static let favoriteTitle = "Favorite".localized()

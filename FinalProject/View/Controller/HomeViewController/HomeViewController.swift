@@ -29,7 +29,7 @@ final class HomeViewController: UIViewController {
         collectionView.register(titleHeader, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "titleheader")
     }
 
-    @objc func buttonDidClick() {
+    @objc private func buttonDidClick() {
         print("button Did Click !")
     }
 
@@ -86,13 +86,9 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath.section == 0 {
             let vc = DetailViewController()
             vc.viewModel = DetailViewModel(video: viewmodel.myTrendings[indexPath.row])
             navigationController?.pushViewController(vc, animated: true)
-        } else {
-            print("Did Click !")
-        }
     }
 
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {

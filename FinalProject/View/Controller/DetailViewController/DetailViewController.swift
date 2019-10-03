@@ -1,12 +1,7 @@
-//
-//  DetailViewController.swift
-//  FinalProject
-//
-//  Created by PCI0010 on 10/1/19.
-//  Copyright © 2019 Asiantech. All rights reserved.
-//
 import YoutubePlayer_in_WKWebView
 import UIKit
+import Realm
+import RealmSwift
 
 final class DetailViewController: UIViewController {
 
@@ -31,10 +26,28 @@ final class DetailViewController: UIViewController {
         configThumbnail()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        checkExistId()
+    }
+
     @IBAction func playButton(_ sender: UIButton) {
         let vc = VideoViewController()
         vc.videoID = viewModel.id
         present(vc, animated: true, completion: nil)
+    }
+
+    func checkExistId() {
+        viewModel.checkId { (done) in
+            if done {
+                let favoriteButton = UIBarButtonItem(image: #imageLiteral(resourceName: "ic-addedfav"), style: .plain, target: self, action: #selector(buttonDidClick))
+                favoriteButton.tintColor = UIColor.red
+                navigationItem.rightBarButtonItem = favoriteButton
+            } else {
+                let favoriteButton = UIBarButtonItem(image: #imageLiteral(resourceName: "ic-heart"), style: .plain, target: self, action: #selector(buttonDidClick))
+                favoriteButton.tintColor = UIColor.red
+                navigationItem.rightBarButtonItem = favoriteButton
+            }
+        }
     }
 
     func configData() {
@@ -54,7 +67,7 @@ final class DetailViewController: UIViewController {
         tableView.register(UINib(nibName: "CommentCell", bundle: nil), forCellReuseIdentifier: "cell5")
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.estimatedRowHeight = 100
+        tableView.estimatedRowHeight = 120
         tableView.rowHeight = UITableView.automaticDimension
 
         let favoriteButton = UIBarButtonItem(image: #imageLiteral(resourceName: "ic-heart"), style: .plain, target: self, action: #selector(buttonDidClick))
@@ -62,8 +75,20 @@ final class DetailViewController: UIViewController {
         navigationItem.rightBarButtonItem = favoriteButton
     }
 
-    @objc func buttonDidClick() {
-        print("Liked Video !")
+    @objc private func buttonDidClick() {
+        viewModel.saveRealm { (done, isAdd) in
+            if done {
+                if isAdd {
+                    let favoriteButton = UIBarButtonItem(image: #imageLiteral(resourceName: "ic-addedfav"), style: .plain, target: self, action: #selector(self.buttonDidClick))
+                    favoriteButton.tintColor = UIColor.red
+                    self.navigationItem.rightBarButtonItem = favoriteButton
+                } else {
+                    let favoriteButton = UIBarButtonItem(image: #imageLiteral(resourceName: "ic-heart"), style: .plain, target: self, action: #selector(self.buttonDidClick))
+                    favoriteButton.tintColor = UIColor.red
+                    self.navigationItem.rightBarButtonItem = favoriteButton
+                }
+            }
+        }
     }
 
     func configThumbnail() {
@@ -96,6 +121,6 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Comments :"
+        return App.String.commentHeader
     }
 }

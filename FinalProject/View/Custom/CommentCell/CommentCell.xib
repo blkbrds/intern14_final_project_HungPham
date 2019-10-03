@@ -20,7 +20,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Tam" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bTM-eV-gz4">
-                        <rect key="frame" x="88" y="10" width="306" height="20"/>
+                        <rect key="frame" x="88" y="15" width="306" height="20"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="306" id="dNf-U5-23x"/>
                             <constraint firstAttribute="height" constant="20" id="frM-9R-oir"/>
@@ -30,7 +30,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hTw-wa-QiC">
-                        <rect key="frame" x="88" y="38" width="316" height="31.5"/>
+                        <rect key="frame" x="88" y="43" width="316" height="26.5"/>
                         <string key="text">Anh đừng yêu người khác nhé! Anh chờ em được không? 👉 MV ANH ĐỢI EM ĐƯỢC KHÔNG  https://youtu.be/5QfXwgkJITA #AnhDoiEmDuocKhong #ADEDK #MyTam</string>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <nil key="textColor"/>
@@ -46,7 +46,7 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="GMZ-Ye-ObN" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="54a-84-Qek"/>
-                    <constraint firstItem="bTM-eV-gz4" firstAttribute="top" secondItem="GMZ-Ye-ObN" secondAttribute="top" id="7Vl-g7-0NW"/>
+                    <constraint firstItem="bTM-eV-gz4" firstAttribute="top" secondItem="GMZ-Ye-ObN" secondAttribute="top" constant="5" id="7Vl-g7-0NW"/>
                     <constraint firstItem="hTw-wa-QiC" firstAttribute="leading" secondItem="GMZ-Ye-ObN" secondAttribute="leading" constant="68" id="SAz-QC-tga"/>
                     <constraint firstItem="GMZ-Ye-ObN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="U4j-5f-GxC"/>
                     <constraint firstAttribute="bottom" secondItem="hTw-wa-QiC" secondAttribute="bottom" constant="10" id="WUB-YL-F52"/>
