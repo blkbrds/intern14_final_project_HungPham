@@ -27,7 +27,7 @@ final class FavoriteViewModel {
 
     func deleteALL(completion: @escaping (Bool) -> Void) {
         guard let datas = RealmManager.shared.fetchObjects(Trending.self) else { return }
-        RealmManager.shared.deleteAll(objects: [Trending](datas)) { (result) in
+        RealmManager.shared.deleteAll(objects: [Trending](datas)) { result in
             switch result {
             case .failure(let error):
                 print("🔴 DELETE FAILED: \(error.localizedDescription)")
@@ -42,7 +42,7 @@ final class FavoriteViewModel {
 
     func deleteVideoId(with index: Int, completion: @escaping (Bool) -> Void) {
         guard let datas = RealmManager.shared.fetchObjects(Trending.self) else { return }
-        RealmManager.shared.delete(object: datas[index]) { (result) in
+        RealmManager.shared.delete(object: datas[index]) { result in
             switch result {
             case .failure(let error):
                 print("🔴 DELETEd Index FAILED: \(error.localizedDescription)")

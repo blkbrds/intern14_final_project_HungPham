@@ -8,14 +8,15 @@ final class SearchViewModel {
     var pageToken: String = ""
 
     func getSearchData(isLoadMore: Bool, completion: @escaping (Bool) -> Void) {
-        ApiManager.Snippet.getSearchData(pageToken: pageToken, keySearch: keySearch) { result in
+        ApiManager.Snippet.getSearchData(pageToken: pageToken, keySearch: keySearch) { [weak self] result in
+            guard let this = self else { return }
             switch result {
             case .success(let searchResult):
-                self.pageToken = searchResult.pageToken
+                this.pageToken = searchResult.pageToken
                 if !isLoadMore {
-                    self.searchedVideo.removeAll()
+                    this.searchedVideo.removeAll()
                 }
-                self.searchedVideo.append(contentsOf: searchResult.searchedVideo)
+                this.searchedVideo.append(contentsOf: searchResult.searchedVideos)
                 completion(true)
             case .failure(let error):
                 print(error.localizedDescription)

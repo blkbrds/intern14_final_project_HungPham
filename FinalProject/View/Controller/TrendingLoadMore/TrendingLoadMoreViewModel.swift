@@ -7,14 +7,15 @@ final class TrendingLoadMoreViewModel {
     var token: String = ""
 
     func getDataTrending(isLoadMore: Bool, completion: @escaping (Bool) -> Void) {
-        ApiManager.Snippet.getTrendingLoadMoreData(pageToken: token) { (result) in
+        ApiManager.Snippet.getTrendingLoadMoreData(pageToken: token) { [weak self] result in
+            guard let this = self else { return }
             switch result {
             case .success(let trendingLoadMoreResult):
-                self.token = trendingLoadMoreResult.pageToken
+                this.token = trendingLoadMoreResult.pageToken
                 if !isLoadMore {
-                    self.myTrendings.removeAll()
+                    this.myTrendings.removeAll()
                 }
-                self.myTrendings.append(contentsOf: trendingLoadMoreResult.myTrending)
+                this.myTrendings.append(contentsOf: trendingLoadMoreResult.myTrending)
                 completion(true)
             case .failure(let error):
                 print(error.localizedDescription)

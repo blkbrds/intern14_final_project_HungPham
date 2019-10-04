@@ -18,7 +18,7 @@ extension ApiManager.Snippet {
     }
 
     struct SearchResult {
-        var searchedVideo: [Channel] = []
+        var searchedVideos: [Channel] = []
         var pageToken: String
     }
 
@@ -57,7 +57,7 @@ extension ApiManager.Snippet {
                         let searchedVideo = Channel(dic: dic)
                         searchedVideos.append(searchedVideo)
                     }
-                    let searchResult = SearchResult(searchedVideo: searchedVideos, pageToken: nextPageToken)
+                    let searchResult = SearchResult(searchedVideos: searchedVideos, pageToken: nextPageToken)
                     completion(.success(searchResult))
                 } else {
                     completion(.failure(.error("Can't Format Data!")))

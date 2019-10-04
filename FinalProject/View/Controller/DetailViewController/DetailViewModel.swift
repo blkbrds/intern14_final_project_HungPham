@@ -9,10 +9,11 @@ final class DetailViewModel {
     var notificationToken: NotificationToken?
 
     func getDataComment(completion: @escaping (Bool) -> Void) {
-        ApiManager.Snippet.getCommentData(videoId: video.id) { (result) in
+        ApiManager.Snippet.getCommentData(videoId: video.id) { [weak self] result in
+            guard let this = self else { return }
             switch result {
             case .success(let commentResult):
-                self.myComments.append(contentsOf: commentResult.myComments)
+                this.myComments.append(contentsOf: commentResult.myComments)
                 completion(true)
             case .failure(let error):
                 print(error.localizedDescription)
@@ -57,7 +58,7 @@ final class DetailViewModel {
                 return
             }
             if let video = [Trending](videoResult).first {
-                RealmManager.shared.delete(object: video) { (result) in
+                RealmManager.shared.delete(object: video) { result in
                     switch result {
                     case .success:
                         print("REMOVE DONE")
@@ -73,7 +74,7 @@ final class DetailViewModel {
         } else {
             // ADD FAVORITE
             let copyVideo = Trending(value: self.video)
-            RealmManager.shared.add(object: copyVideo) { (result) in
+            RealmManager.shared.add(object: copyVideo) { result in
                 switch result {
                 case .success:
                     print("ADD DONE")
