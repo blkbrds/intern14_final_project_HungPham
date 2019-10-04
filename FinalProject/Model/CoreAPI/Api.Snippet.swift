@@ -18,7 +18,7 @@ extension ApiManager.Snippet {
     }
 
     struct SearchResult {
-        var mySearch: [Channel] = []
+        var searchedVideo: [Channel] = []
         var pageToken: String
     }
 
@@ -46,19 +46,18 @@ extension ApiManager.Snippet {
     static func getSearchData(pageToken: String, keySearch: String, completion: @escaping APICompletion<SearchResult>) {
         let urlString = QuerryString().getSearchPath() + "&pageToken=\(pageToken)" + "&order=relevance&q=\(keySearch)"
 
-        API.shared().request(urlString: urlString) { (result) in
+        API.shared().request(urlString: urlString) { result in
             switch result {
             case .success(let data):
                 if let data = data {
                     let json = data.convertToJSON()
-                    guard let nextPageToken = json["nextPageToken"] as? String else { return }
-                    guard let items = json["items"] as? [JSON] else { return }
-                    var mySearchs: [Channel] = []
+                    guard let nextPageToken = json["nextPageToken"] as? String, let items = json["items"] as? [JSON] else { return }
+                    var searchedVideos: [Channel] = []
                     for dic in items {
-                        let mySearch = Channel(dic: dic)
-                        mySearchs.append(mySearch)
+                        let searchedVideo = Channel(dic: dic)
+                        searchedVideos.append(searchedVideo)
                     }
-                    let searchResult = SearchResult(mySearch: mySearchs, pageToken: nextPageToken)
+                    let searchResult = SearchResult(searchedVideo: searchedVideos, pageToken: nextPageToken)
                     completion(.success(searchResult))
                 } else {
                     completion(.failure(.error("Can't Format Data!")))
@@ -72,7 +71,7 @@ extension ApiManager.Snippet {
     static func getChannelData(completion: @escaping APICompletion<ChannelResult>) {
         let urlString = QuerryString().getChannelPath()
 
-        API.shared().request(urlString: urlString) { (result) in
+        API.shared().request(urlString: urlString) { result in
             switch result {
             case .success(let data):
                 if let data = data {
@@ -96,13 +95,12 @@ extension ApiManager.Snippet {
 
     static func getTrendingLoadMoreData(pageToken: String, completion: @escaping APICompletion<TrendingLoadMoreResult>) {
         let urlString = QuerryString().getTrendingPath() + "&pageToken=\(pageToken)"
-        API.shared().request(urlString: urlString) { (result) in
+        API.shared().request(urlString: urlString) { result in
             switch result {
             case .success(let data):
                 if let data = data {
                     let json = data.convertToJSON()
-                    guard let nextPageToken = json["nextPageToken"] as? String else { return }
-                    guard let items = json["items"] as? [JSON] else { return }
+                    guard let nextPageToken = json["nextPageToken"] as? String, let items = json["items"] as? [JSON] else { return }
                     var myTrendingds: [Trending] = []
                     for dic in items {
                         let myTrending = Trending(dic: dic)
@@ -122,7 +120,7 @@ extension ApiManager.Snippet {
     static func getTrendingData(completion: @escaping APICompletion<TrendingResult>) {
         let urlString = QuerryString().getTrendingPath()
 
-        API.shared().request(urlString: urlString) { (result) in
+        API.shared().request(urlString: urlString) { result in
             switch result {
             case .success(let data):
                 if let data = data {

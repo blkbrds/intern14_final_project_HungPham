@@ -31,7 +31,7 @@ final class SearchViewController: UIViewController {
         searchController.definesPresentationContext = true
         searchController.searchBar.placeholder = "Search"
         searchController.searchBar.tintColor = UIColor.white
-        searchController.searchBar.barTintColor = UIColor.red
+        searchController.searchBar.barTintColor = .red
     }
 
     func getData(isLoadMore: Bool) {
@@ -58,15 +58,15 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "searchCell", for: indexPath) as? SearchCell else { return UITableViewCell() }
-        let mySearchs = viewModel.getSearch(with: indexPath)
-        let cellViewModel = SearchCellModel(mySearch: mySearchs)
+        let searchedVideo = viewModel.getSearchedVideo(with: indexPath)
+        let cellViewModel = SearchCellModel(searchedVideo: searchedVideo)
         cell.viewModel = cellViewModel
         return cell
     }
 
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row == viewModel.mySearchs.count - 4 {
-            self.getData(isLoadMore: true)
+        if indexPath.row == viewModel.searchedVideo.count - 4 {
+            getData(isLoadMore: true)
         }
     }
 }
@@ -77,7 +77,7 @@ extension SearchViewController: UISearchResultsUpdating {
         guard let searchText = searchController.searchBar.text else { return }
         let trimmed = String(searchText.filter { !" \n\t\r".contains($0) })
         viewModel.keySearch = trimmed
-        viewModel.getSearchData(isLoadMore: false) { (result) in
+        viewModel.getSearchData(isLoadMore: false) { result in
             switch result {
             case true:
                 self.tableView.reloadData()

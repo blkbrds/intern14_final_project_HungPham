@@ -3,19 +3,19 @@ import UIKit
 
 final class SearchViewModel {
 
-    var mySearchs: [Channel] = []
+    var searchedVideo: [Channel] = []
     var keySearch: String = ""
     var pageToken: String = ""
 
     func getSearchData(isLoadMore: Bool, completion: @escaping (Bool) -> Void) {
-        ApiManager.Snippet.getSearchData(pageToken: pageToken, keySearch: keySearch) { (result) in
+        ApiManager.Snippet.getSearchData(pageToken: pageToken, keySearch: keySearch) { result in
             switch result {
             case .success(let searchResult):
                 self.pageToken = searchResult.pageToken
                 if !isLoadMore {
-                    self.mySearchs.removeAll()
+                    self.searchedVideo.removeAll()
                 }
-                self.mySearchs.append(contentsOf: searchResult.mySearch)
+                self.searchedVideo.append(contentsOf: searchResult.searchedVideo)
                 completion(true)
             case .failure(let error):
                 print(error.localizedDescription)
@@ -28,10 +28,10 @@ final class SearchViewModel {
 extension SearchViewModel {
 
     func numberOfItemsSearch(in section: Int) -> Int {
-        return mySearchs.count
+        return searchedVideo.count
     }
 
-    func getSearch(with indexPath: IndexPath) -> Channel {
-        return mySearchs[indexPath.row]
+    func getSearchedVideo(with indexPath: IndexPath) -> Channel {
+        return searchedVideo[indexPath.row]
     }
 }

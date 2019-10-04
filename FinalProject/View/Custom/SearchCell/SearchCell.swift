@@ -20,9 +20,4 @@ final class SearchCell: UITableViewCell {
         publicdateLabel.text = viewModel.publishedAt
         videoImageView.sd_setImage(with: URL(string: viewModel.imageURL))
     }
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-
 }

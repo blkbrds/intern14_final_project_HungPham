@@ -7,10 +7,10 @@ final class SearchCellModel {
     var publishedAt: String
     var imageURL: String
 
-    init(mySearch: Channel) {
-        self.title = mySearch.title
-        self.description = mySearch.description
-        self.publishedAt = mySearch.publishedAt
-        self.imageURL = mySearch.imageURL
+    init(searchedVideo: Channel) {
+        self.title = searchedVideo.title
+        self.description = searchedVideo.descriptionVideo
+        self.publishedAt = searchedVideo.publishedAt
+        self.imageURL = searchedVideo.imageURL
     }
 }
