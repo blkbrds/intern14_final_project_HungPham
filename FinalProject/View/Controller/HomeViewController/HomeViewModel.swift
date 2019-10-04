@@ -9,7 +9,7 @@ final class HomeViewModel {
 
     // Mark : - Load Data From API
     func loadDataTrending(completion: @escaping (Bool) -> Void) {
-        ApiManager.Snippet.getTrendingData() { [weak self] result in
+        ApiManager.Snippet.getTrendingData { [weak self] result in
             guard let this = self else { return }
             switch result {
             case .success(let trendingResult):
