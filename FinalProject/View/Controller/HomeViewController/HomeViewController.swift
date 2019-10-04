@@ -30,6 +30,7 @@ final class HomeViewController: UIViewController {
     }
 
     @objc private func buttonDidClick() {
+        navigationController?.pushViewController(CategoryViewController(), animated: true)
         print("button Did Click !")
     }
 
