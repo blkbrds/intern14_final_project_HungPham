@@ -31,7 +31,7 @@ final class FavoriteViewController: UIViewController {
     }
 
     func alert() {
-        let alertController = UIAlertController(title: "Delete All", message: "Do You Want To Delete All Favorite Video ?", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Delete All", message: "Do You Want To Delete All Favorite Videos ?", preferredStyle: .alert)
 
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) { _ in
             NSLog("Cancel Pressed")
@@ -77,10 +77,11 @@ extension FavoriteViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             print("Deleted")
-            self.viewModel.myData.remove(at: indexPath.row)
-            self.tableView.beginUpdates()
-            self.tableView.deleteRows(at: [indexPath], with: .automatic)
-            self.tableView.endUpdates()
+            viewModel.deleteVideoId(with: indexPath.row) { (done) in
+                if done {
+                    tableView.reloadData()
+                }
+            }
         }
     }
 }

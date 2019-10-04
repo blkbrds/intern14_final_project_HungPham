@@ -4,14 +4,14 @@ import RealmSwift
 
 final class DetailViewModel {
 
+    var video: Trending
     var myComments: [Comment] = []
     var notificationToken: NotificationToken?
 
     func getDataComment(completion: @escaping (Bool) -> Void) {
-        ApiManager.Snippet.getCommentData(videoId: id) { (result) in
+        ApiManager.Snippet.getCommentData(videoId: video.id) { (result) in
             switch result {
             case .success(let commentResult):
-                print(self.video)
                 self.myComments.append(contentsOf: commentResult.myComments)
                 completion(true)
             case .failure(let error):
@@ -21,17 +21,17 @@ final class DetailViewModel {
         }
     }
 
-    func checkId(completion: (Bool) -> Void) {
+    func checkIdFavorite(completion: (Bool) -> Void) {
         let videoIdFilter = NSPredicate(format: "id = '\(self.video.id)'")
         guard let videoResult = RealmManager.shared.fetchObjects(Trending.self, filter: videoIdFilter) else {
             completion(false)
             return }
         let videos = [Trending](videoResult)
         if videos.count == 0 {
-            print("🔴 Chua co FAVORITE")
+            print("🔵 Not Exist in FAVORITE")
             completion(false)
         } else {
-            print("🔵 Da co FAVORITE")
+            print("🔴 Exist in FAVORITE")
             completion(true)
         }
     }
@@ -50,7 +50,7 @@ final class DetailViewModel {
 
     func saveRealm(completion: @escaping (_ done: Bool, _ isAdd: Bool) -> Void) {
         if checkId() {
-            //REMOVE FAVORITE
+            // REMOVE FAVORITE
             let videoIdFilter = NSPredicate(format: "id = '\(self.video.id)'")
             guard let videoResult = RealmManager.shared.fetchObjects(Trending.self, filter: videoIdFilter) else {
                 completion(false, false)
@@ -71,7 +71,7 @@ final class DetailViewModel {
                 completion(false, false)
             }
         } else {
-            //ADD FAVORITE
+            // ADD FAVORITE
             let copyVideo = Trending(value: self.video)
             RealmManager.shared.add(object: copyVideo) { (result) in
                 switch result {
@@ -84,44 +84,6 @@ final class DetailViewModel {
                 }
             }
         }
-    }
-
-    var video: Trending
-
-    var id: String {
-        return video.id
-    }
-
-    var title: String {
-        return video.title
-    }
-
-    var duration: String {
-        return video.duration
-    }
-
-    var viewCount: String {
-        return video.viewCount
-    }
-
-    var likeCount: String {
-        return video.likeCount
-    }
-
-    var dislikeCount: String {
-        return video.dislikeCount
-    }
-
-    var publishedAt: String {
-        return video.publishedAt
-    }
-
-    var imageURL: String {
-        return video.imageURL
-    }
-
-    var descriptionDetail: String {
-        return video.descriptionDetail
     }
 
     init(video: Trending = Trending()) {

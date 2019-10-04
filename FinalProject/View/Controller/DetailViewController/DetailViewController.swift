@@ -32,18 +32,18 @@ final class DetailViewController: UIViewController {
 
     @IBAction func playButton(_ sender: UIButton) {
         let vc = VideoViewController()
-        vc.videoID = viewModel.id
+        vc.videoID = viewModel.video.id
         present(vc, animated: true, completion: nil)
     }
 
     func checkExistId() {
-        viewModel.checkId { (done) in
+        viewModel.checkIdFavorite { (done) in
             if done {
                 let favoriteButton = UIBarButtonItem(image: #imageLiteral(resourceName: "ic-addedfav"), style: .plain, target: self, action: #selector(buttonDidClick))
                 favoriteButton.tintColor = UIColor.red
                 navigationItem.rightBarButtonItem = favoriteButton
             } else {
-                let favoriteButton = UIBarButtonItem(image: #imageLiteral(resourceName: "ic-heart"), style: .plain, target: self, action: #selector(buttonDidClick))
+                let favoriteButton = UIBarButtonItem(image: #imageLiteral(resourceName: "ic-addfav"), style: .plain, target: self, action: #selector(buttonDidClick))
                 favoriteButton.tintColor = UIColor.red
                 navigationItem.rightBarButtonItem = favoriteButton
             }
@@ -92,17 +92,17 @@ final class DetailViewController: UIViewController {
     }
 
     func configThumbnail() {
-        videoImage.sd_setImage(with: URL(string: viewModel.imageURL))
-        timeLabel.text = viewModel.duration.replacingOccurrences(of: "PT", with: "")
+        videoImage.sd_setImage(with: URL(string: viewModel.video.imageURL))
+        timeLabel.text = viewModel.video.duration.replacingOccurrences(of: "PT", with: "")
             .replacingOccurrences(of: "H", with: ":")
             .replacingOccurrences(of: "M", with: ":")
             .replacingOccurrences(of: "S", with: "")
-        titleLabel.text = viewModel.title
-        viewCountLabel.text = viewModel.viewCount + " views"
-        likeLabel.text = viewModel.likeCount + " Like"
-        dislikeLabel.text = viewModel.dislikeCount + " Dislike"
-        publicDateLabel.text = viewModel.publishedAt
-        descriptionLabel.text = viewModel.descriptionDetail
+        titleLabel.text = viewModel.video.title
+        viewCountLabel.text = viewModel.video.viewCount + " views"
+        likeLabel.text = viewModel.video.likeCount + " Like"
+        dislikeLabel.text = viewModel.video.dislikeCount + " Dislike"
+        publicDateLabel.text = viewModel.video.publishedAt
+        descriptionLabel.text = viewModel.video.descriptionDetail
     }
 }
 
