@@ -4,7 +4,7 @@ final class FavoriteViewController: UIViewController {
 
     var viewModel = FavoriteViewModel()
 
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet private weak var tableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()

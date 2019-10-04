@@ -9,10 +9,11 @@ final class HomeViewModel {
 
     // Mark : - Load Data From API
     func loadDataTrending(completion: @escaping (Bool) -> Void) {
-        ApiManager.Snippet.getTrendingData() { (result) in
+        ApiManager.Snippet.getTrendingData { [weak self] result in
+            guard let this = self else { return }
             switch result {
             case .success(let trendingResult):
-                self.myTrendings.append(contentsOf: trendingResult.myTrending)
+                this.myTrendings.append(contentsOf: trendingResult.myTrending)
                 completion(true)
             case .failure(let error):
                 print(error.localizedDescription)
@@ -22,10 +23,11 @@ final class HomeViewModel {
     }
 
     func loadDataChannel(completion: @escaping (Bool) -> Void) {
-        ApiManager.Snippet.getChannelData { (result) in
+        ApiManager.Snippet.getChannelData { [weak self] result in
+            guard let this = self else { return }
             switch result {
             case .success(let channelResult):
-                self.myChannels.append(contentsOf: channelResult.myChannel)
+                this.myChannels.append(contentsOf: channelResult.myChannel)
                 completion(true)
             case .failure(let error):
                 print(error.localizedDescription)
