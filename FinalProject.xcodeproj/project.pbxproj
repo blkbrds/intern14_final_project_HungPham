@@ -59,6 +59,12 @@
 		73ED37162346DA8C00010F2C /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ED37142346DA8C00010F2C /* SearchCell.swift */; };
 		73ED37172346DA8C00010F2C /* SearchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73ED37152346DA8C00010F2C /* SearchCell.xib */; };
 		73ED37192346DA9C00010F2C /* SearchCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ED37182346DA9C00010F2C /* SearchCellModel.swift */; };
+		73EF3458234723C000ADF66A /* ChannelLoadMoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EF3456234723C000ADF66A /* ChannelLoadMoreViewController.swift */; };
+		73EF3459234723C000ADF66A /* ChannelLoadMoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73EF3457234723C000ADF66A /* ChannelLoadMoreViewController.xib */; };
+		73EF345B234723CD00ADF66A /* ChannelLoadMoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EF345A234723CD00ADF66A /* ChannelLoadMoreViewModel.swift */; };
+		73EF345F234727AF00ADF66A /* ChannelVideosCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EF345D234727AF00ADF66A /* ChannelVideosCell.swift */; };
+		73EF3460234727AF00ADF66A /* ChannelVideosCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73EF345E234727AF00ADF66A /* ChannelVideosCell.xib */; };
+		73EF3462234727DA00ADF66A /* ChannelVideosCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EF3461234727DA00ADF66A /* ChannelVideosCellModel.swift */; };
 		73EF50322344420300963862 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EF50312344420300963862 /* Comment.swift */; };
 		73EF50362344439A00963862 /* Api.Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EF50352344439A00963862 /* Api.Comment.swift */; };
 		73EF503823447EC600963862 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EF503723447EC600963862 /* SearchViewModel.swift */; };
@@ -148,6 +154,12 @@
 		73ED37142346DA8C00010F2C /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
 		73ED37152346DA8C00010F2C /* SearchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchCell.xib; sourceTree = "<group>"; };
 		73ED37182346DA9C00010F2C /* SearchCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCellModel.swift; sourceTree = "<group>"; };
+		73EF3456234723C000ADF66A /* ChannelLoadMoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelLoadMoreViewController.swift; sourceTree = "<group>"; };
+		73EF3457234723C000ADF66A /* ChannelLoadMoreViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChannelLoadMoreViewController.xib; sourceTree = "<group>"; };
+		73EF345A234723CD00ADF66A /* ChannelLoadMoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelLoadMoreViewModel.swift; sourceTree = "<group>"; };
+		73EF345D234727AF00ADF66A /* ChannelVideosCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelVideosCell.swift; sourceTree = "<group>"; };
+		73EF345E234727AF00ADF66A /* ChannelVideosCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChannelVideosCell.xib; sourceTree = "<group>"; };
+		73EF3461234727DA00ADF66A /* ChannelVideosCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelVideosCellModel.swift; sourceTree = "<group>"; };
 		73EF50312344420300963862 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		73EF50352344439A00963862 /* Api.Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.Comment.swift; sourceTree = "<group>"; };
 		73EF503723447EC600963862 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
@@ -265,6 +277,7 @@
 		6AF60E252313C13600F5CBA2 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				73EF34552347239500ADF66A /* ChannelLoadMore */,
 				73EF50442344B1FF00963862 /* FavoriteViewController */,
 				73F5DF64234350B900468A09 /* VideoViewController */,
 				73F5DF4F2343007900468A09 /* DetailViewController */,
@@ -404,6 +417,7 @@
 		730C85C32341AA0F00B9EE8B /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				73EF345C2347278900ADF66A /* ChannelVideosCell */,
 				73ED37132346D9AC00010F2C /* SearchCell */,
 				73EF504B2344B31F00963862 /* FavoriteCell */,
 				73EF5039234492B600963862 /* CommentCell */,
@@ -478,6 +492,26 @@
 				73ED37182346DA9C00010F2C /* SearchCellModel.swift */,
 			);
 			path = SearchCell;
+			sourceTree = "<group>";
+		};
+		73EF34552347239500ADF66A /* ChannelLoadMore */ = {
+			isa = PBXGroup;
+			children = (
+				73EF3456234723C000ADF66A /* ChannelLoadMoreViewController.swift */,
+				73EF3457234723C000ADF66A /* ChannelLoadMoreViewController.xib */,
+				73EF345A234723CD00ADF66A /* ChannelLoadMoreViewModel.swift */,
+			);
+			path = ChannelLoadMore;
+			sourceTree = "<group>";
+		};
+		73EF345C2347278900ADF66A /* ChannelVideosCell */ = {
+			isa = PBXGroup;
+			children = (
+				73EF345D234727AF00ADF66A /* ChannelVideosCell.swift */,
+				73EF345E234727AF00ADF66A /* ChannelVideosCell.xib */,
+				73EF3461234727DA00ADF66A /* ChannelVideosCellModel.swift */,
+			);
+			path = ChannelVideosCell;
 			sourceTree = "<group>";
 		};
 		73EF5039234492B600963862 /* CommentCell */ = {
@@ -632,10 +666,12 @@
 				73EF504F2344B34200963862 /* FavoriteCell.xib in Resources */,
 				730C85A22341978600B9EE8B /* SearchViewController.xib in Resources */,
 				730C85CA2341AA4300B9EE8B /* TitleHeaderView.xib in Resources */,
+				73EF3460234727AF00ADF66A /* ChannelVideosCell.xib in Resources */,
 				730C859C2341975000B9EE8B /* HomeViewController.xib in Resources */,
 				73F5DF532343029C00468A09 /* DetailViewController.xib in Resources */,
 				73ED37172346DA8C00010F2C /* SearchCell.xib in Resources */,
 				730C85CE2341AB8E00B9EE8B /* TrendingCell.xib in Resources */,
+				73EF3459234723C000ADF66A /* ChannelLoadMoreViewController.xib in Resources */,
 				730C85E32341EBC700B9EE8B /* TrendingLoadMoreViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -749,6 +785,7 @@
 				730C85C22341AA0400B9EE8B /* Trending.swift in Sources */,
 				73F5DF522343029C00468A09 /* DetailViewController.swift in Sources */,
 				730C85D82341AE3200B9EE8B /* HomeViewModel.swift in Sources */,
+				73EF345F234727AF00ADF66A /* ChannelVideosCell.swift in Sources */,
 				73ED37162346DA8C00010F2C /* SearchCell.swift in Sources */,
 				730C85B72341A92F00B9EE8B /* API.swift in Sources */,
 				730C85D62341AC7900B9EE8B /* ChannelCellModel.swift in Sources */,
@@ -759,6 +796,7 @@
 				6AF613B12313C13A00F5CBA2 /* CollectionViewHeaderView.swift in Sources */,
 				6AF60E1E2313B9C000F5CBA2 /* UIViewControllerExt.swift in Sources */,
 				730C85BD2341A96200B9EE8B /* API+Data.swift in Sources */,
+				73EF3458234723C000ADF66A /* ChannelLoadMoreViewController.swift in Sources */,
 				73EF50472344B28500963862 /* FavoriteViewController.swift in Sources */,
 				6AF60D082313B31200F5CBA2 /* App.swift in Sources */,
 				6AF60D802313B56B00F5CBA2 /* Session.swift in Sources */,
@@ -766,6 +804,7 @@
 				730C85B32341A8C000B9EE8B /* RealmManager.swift in Sources */,
 				73EF504E2344B34200963862 /* FavoriteCell.swift in Sources */,
 				73EF50512344B55900963862 /* FavoriteCellModel.swift in Sources */,
+				73EF3462234727DA00ADF66A /* ChannelVideosCellModel.swift in Sources */,
 				73EF50362344439A00963862 /* Api.Comment.swift in Sources */,
 				6AF60D192313B35800F5CBA2 /* Errors.swift in Sources */,
 				730C85E22341EBC700B9EE8B /* TrendingLoadMoreViewController.swift in Sources */,
@@ -781,6 +820,7 @@
 				73ED37192346DA9C00010F2C /* SearchCellModel.swift in Sources */,
 				6AF613C42313C13A00F5CBA2 /* TableCell.swift in Sources */,
 				730C85D12341AB9800B9EE8B /* ChannelCell.swift in Sources */,
+				73EF345B234723CD00ADF66A /* ChannelLoadMoreViewModel.swift in Sources */,
 				73F5DF67234350D000468A09 /* VideoViewController.swift in Sources */,
 				730C85BB2341A95400B9EE8B /* ApiManager.swift in Sources */,
 				73F5DF55234302A500468A09 /* DetailViewModel.swift in Sources */,

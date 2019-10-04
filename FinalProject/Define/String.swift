@@ -20,6 +20,7 @@ extension App.String {
     static let favoriteTitle = "Favorite".localized()
     static let topTrending = "Top 10 Trending".localized()
     static let trendingVideos = "Top Trending".localized()
+    static let channelVideos = "Channel Videos".localized()
     static let channelTitle = "Channels".localized()
     static let titleDefault: String = "Title".localized()
     static let descriptionDefault: String = "Description".localized()

@@ -102,8 +102,10 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             headerView.delegate = self
             if indexPath.section == 0 {
                 headerView.titleHeaderLabel.text = App.String.topTrending
+                headerView.isClickedTitle = true
             } else {
                 headerView.titleHeaderLabel.text = App.String.channelTitle
+                headerView.isClickedTitle = false
             }
             return headerView
         default:
@@ -146,7 +148,11 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
 
 extension HomeViewController: TitleHeaderViewDelegate {
 
-    func tapMore(_ titleHeaderView: TitleHeaderView, sender: UIButton) {
+    func tapMoreTrending(_ titleHeaderView: TitleHeaderView, sender: UIButton) {
         navigationController?.pushViewController(TrendingLoadMoreViewController(), animated: true)
+    }
+
+    func tapMoreChannel(_ titleHeaderView: TitleHeaderView, sender: UIButton) {
+        navigationController?.pushViewController(ChannelLoadMoreViewController(), animated: true)
     }
 }
