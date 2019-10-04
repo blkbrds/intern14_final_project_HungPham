@@ -33,11 +33,10 @@ extension ApiManager.Path {
 
     struct ChannelSnippet: ApiPath {
         static var path: String { return baseURL / "v3/search?" }
-        let pageToken: String
         let maxResults: Int
         let keySearch: String
         let keyID: String
-        var urlString: String { return ChannelSnippet.path + "part=snippet&pageToken=\(pageToken)&maxResults=\(maxResults)&order=relevance&q=\(keySearch)&key=\(keyID)" }
+        var urlString: String { return ChannelSnippet.path + "part=snippet&maxResults=\(maxResults)&order=relevance&q=\(keySearch)&key=\(keyID)" }
     }
 
     struct CommentSnippet: ApiPath {

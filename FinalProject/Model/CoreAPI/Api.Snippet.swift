@@ -17,6 +17,11 @@ extension ApiManager.Snippet {
         var myChannel: [Channel] = []
     }
 
+    struct ChannelLoadMoreResult {
+        var myChannel: [Channel] = []
+        var pageToken: String
+    }
+
     struct SearchResult {
         var searchedVideos: [Channel] = []
         var pageToken: String
@@ -34,12 +39,37 @@ extension ApiManager.Snippet {
         }
 
         func getChannelPath() -> String {
-            return ApiManager.Path.ChannelSnippet(pageToken: App.String.token, maxResults: App.Number.maxOfResultTrending, keySearch: App.String.channelKeySearch, keyID: App.KeyUser.keyIdChannel)
+            return ApiManager.Path.ChannelSnippet(maxResults: App.Number.maxOfResultTrending, keySearch: App.String.channelKeySearch, keyID: App.KeyUser.keyIdChannel)
                 .urlString
         }
 
         func getSearchPath() -> String {
             return ApiManager.Path.SearchSnippet(maxResults: App.Number.maxOfResultTrending, keyID: App.KeyUser.keyIdSearch).urlString
+        }
+    }
+
+    static func getChannelLoadMoreData(pageToken: String, completion: @escaping APICompletion<ChannelLoadMoreResult>) {
+        let urlString = QuerryString().getChannelPath() + "&pageToken=\(pageToken)"
+
+        API.shared().request(urlString: urlString) { result in
+            switch result {
+            case .success(let data):
+                if let data = data {
+                    let json = data.convertToJSON()
+                    guard let nextPageToken = json["nextPageToken"] as? String, let items = json["items"] as? [JSON] else { return }
+                    var myChannels: [Channel] = []
+                    for dic in items {
+                        let myChannel = Channel(dic: dic)
+                        myChannels.append(myChannel)
+                    }
+                    let channelLoadMoreReuslt = ChannelLoadMoreResult(myChannel: myChannels, pageToken: nextPageToken)
+                    completion(.success(channelLoadMoreReuslt))
+                } else {
+                    completion(.failure(.error("Can't Format Data!")))
+                }
+            case .failure(let error):
+                completion(.failure(error))
+            }
         }
     }
 

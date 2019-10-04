@@ -9,16 +9,23 @@
 import UIKit
 
 protocol TitleHeaderViewDelegate: class {
-    func tapMore(_ titleHeaderView: TitleHeaderView, sender: UIButton)
+    func tapMoreTrending(_ titleHeaderView: TitleHeaderView, sender: UIButton)
+    func tapMoreChannel(_ titleHeaderView: TitleHeaderView, sender: UIButton)
 }
 
 final class TitleHeaderView: UICollectionReusableView {
+
+    var isClickedTitle = true
 
     @IBOutlet weak var titleHeaderLabel: UILabel!
 
     weak var delegate: TitleHeaderViewDelegate?
 
     @IBAction private func moreButton(_ sender: UIButton) {
-        delegate?.tapMore(self, sender: sender)
+        if isClickedTitle {
+            delegate?.tapMoreTrending(self, sender: sender)
+        } else {
+            delegate?.tapMoreChannel(self, sender: sender)
+        }
     }
 }
