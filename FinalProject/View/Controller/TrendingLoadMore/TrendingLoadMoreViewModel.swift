@@ -25,6 +25,7 @@ final class TrendingLoadMoreViewModel {
 }
 
 extension TrendingLoadMoreViewModel {
+
     func numberOfItemsTrending(in section: Int) -> Int {
         return myTrendings.count
     }

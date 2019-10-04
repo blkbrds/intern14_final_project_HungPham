@@ -33,7 +33,7 @@ final class TrendingLoadMoreViewController: ViewController {
                 if done {
                     this.collectionView.reloadData()
                 } else {
-                    print("aaaa aaaa aaaa")
+                    print("Can't Load More Trending!")
                 }
             }
         }

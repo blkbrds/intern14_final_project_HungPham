@@ -6,10 +6,13 @@ final class Channel: Object {
 
     @objc dynamic var title: String = ""
     @objc dynamic var imageURL: String = ""
+    @objc dynamic var publishedAt: String = ""
 
     convenience init(dic: JSON) {
         var schema: [String: Any] = [:]
         if let snippet = dic["snippet"] as? JSON {
+            let publishedAt = snippet["publishedAt"]
+            schema["publishedAt"] = publishedAt
             let title = snippet["title"]
             schema["title"] = title
 

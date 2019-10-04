@@ -2,7 +2,7 @@ import UIKit
 
 final class HomeViewController: UIViewController {
 
-    var viewmodel = HomeViewModel()
+    let viewmodel = HomeViewModel()
 
     @IBOutlet private weak var collectionView: UICollectionView!
 

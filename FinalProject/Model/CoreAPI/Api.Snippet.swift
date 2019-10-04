@@ -17,18 +17,55 @@ extension ApiManager.Snippet {
         var myChannel: [Channel] = []
     }
 
+    struct SearchResult {
+        var mySearch: [Channel] = []
+        var pageToken: String
+    }
+
     struct QuerryString {
 
         func getCommentPath() -> String {
-            return ApiManager.Path.CommentSnippet(keyID: App.KeyUser.keyID).urlString
+            return ApiManager.Path.CommentSnippet(keyID: App.KeyUser.keyIdComment).urlString
         }
 
         func getTrendingPath() -> String {
-            return ApiManager.Path.Snippet(chart: App.String.trendingKeySearch, regionCode: App.String.regionCode, maxResults: App.Number.maxOfResultTrending, keyID: App.KeyUser.keyID).urlString
+            return ApiManager.Path.Snippet(chart: App.String.trendingKeySearch, regionCode: App.String.regionCode, maxResults: App.Number.maxOfResultTrending, keyID: App.KeyUser.keyIdTrending)
+                .urlString
         }
 
         func getChannelPath() -> String {
-            return ApiManager.Path.ChannelSnippet(pageToken: App.String.token, maxResults: App.Number.maxOfResultTrending, keySearch: App.String.channelKeySearch, keyID: App.KeyUser.keyID).urlString
+            return ApiManager.Path.ChannelSnippet(pageToken: App.String.token, maxResults: App.Number.maxOfResultTrending, keySearch: App.String.channelKeySearch, keyID: App.KeyUser.keyIdChannel)
+                .urlString
+        }
+
+        func getSearchPath() -> String {
+            return ApiManager.Path.SearchSnippet(maxResults: App.Number.maxOfResultTrending, keyID: App.KeyUser.keyIdSearch).urlString
+        }
+    }
+
+    static func getSearchData(pageToken: String, keySearch: String, completion: @escaping APICompletion<SearchResult>) {
+        let urlString = QuerryString().getSearchPath() + "&pageToken=\(pageToken)" + "&order=relevance&q=\(keySearch)"
+
+        API.shared().request(urlString: urlString) { (result) in
+            switch result {
+            case .success(let data):
+                if let data = data {
+                    let json = data.convertToJSON()
+                    guard let nextPageToken = json["nextPageToken"] as? String else { return }
+                    guard let items = json["items"] as? [JSON] else { return }
+                    var mySearchs: [Channel] = []
+                    for dic in items {
+                        let mySearch = Channel(dic: dic)
+                        mySearchs.append(mySearch)
+                    }
+                    let searchResult = SearchResult(mySearch: mySearchs, pageToken: nextPageToken)
+                    completion(.success(searchResult))
+                } else {
+                    completion(.failure(.error("Can't Format Data!")))
+                }
+            case .failure(let error):
+                completion(.failure(error))
+            }
         }
     }
 

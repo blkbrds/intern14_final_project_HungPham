@@ -24,6 +24,13 @@ extension ApiManager.Path {
         var urlString: String { return Snippet.path + "part=snippet,contentDetails,statistics&chart=\(chart)&regionCode=\(regionCode)&maxResults=\(maxResults)&key=\(keyID)" }
     }
 
+    struct SearchSnippet: ApiPath {
+        static var path: String { return baseURL / "v3/search?" }
+        let maxResults: Int
+        let keyID: String
+        var urlString: String { return SearchSnippet.path + "part=snippet&maxResults=\(maxResults)&key=\(keyID)" }
+    }
+
     struct ChannelSnippet: ApiPath {
         static var path: String { return baseURL / "v3/search?" }
         let pageToken: String
