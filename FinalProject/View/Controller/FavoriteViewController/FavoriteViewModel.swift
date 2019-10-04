@@ -1,29 +1,72 @@
-//
-//  FavoriteViewModel.swift
-//  FinalProject
-//
-//  Created by PCI0010 on 9/30/19.
-//  Copyright © 2019 Asiantech. All rights reserved.
-//
+import Foundation
+import RealmSwift
 
-import UIKit
+protocol FavoriteViewModelDelegate: class {
+    func viewModel(_ viewModel: FavoriteViewModel, needperformAction: FavoriteViewModel.Action)
+}
 
-class FavoriteViewModel: UIViewController {
+final class FavoriteViewModel {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    weak var delegate: FavoriteViewModelDelegate?
 
-        // Do any additional setup after loading the view.
+    var myData: [Trending] = []
+    var notificationToken: NotificationToken?
+
+    func fetchData() {
+        guard let datas = RealmManager.shared.fetchObjects(Trending.self) else { return }
+        self.myData = [Trending](datas)
+        delegate?.viewModel(self, needperformAction: .reloadData)
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func observe() {
+        notificationToken = RealmManager.shared.observe(type: Trending.self, completion: { [weak self] _ in
+            guard let this = self else { return }
+            this.fetchData()
+        })
     }
-    */
 
+    func deleteALL(completion: @escaping (Bool) -> Void) {
+        guard let datas = RealmManager.shared.fetchObjects(Trending.self) else { return }
+        RealmManager.shared.deleteAll(objects: [Trending](datas)) { (result) in
+            switch result {
+            case .failure(let error):
+                print("🔴 DELETE FAILED: \(error.localizedDescription)")
+                completion(false)
+            case .success:
+                print("🔵 DELETE SUCCESS")
+                self.myData = []
+                completion(true)
+            }
+        }
+    }
+
+    func deleteVideoId(with index: Int, completion: @escaping (Bool) -> Void) {
+        guard let datas = RealmManager.shared.fetchObjects(Trending.self) else { return }
+        RealmManager.shared.delete(object: datas[index]) { (result) in
+            switch result {
+            case .failure(let error):
+                print("🔴 DELETEd Index FAILED: \(error.localizedDescription)")
+                completion(false)
+            case .success:
+                print("🔵 DELETEd Index SUCCESS")
+                self.myData = []
+                completion(true)
+            }
+        }
+    }
+}
+
+extension FavoriteViewModel {
+
+    func numberOfItems(in section: Int) -> Int {
+        return myData.count
+    }
+
+    func getData(with indexPath: IndexPath) -> Trending {
+        return myData[indexPath.row]
+    }
+
+    enum Action {
+        case reloadData
+    }
 }

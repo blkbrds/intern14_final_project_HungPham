@@ -13,7 +13,6 @@ final class HomeViewModel {
             switch result {
             case .success(let trendingResult):
                 self.myTrendings.append(contentsOf: trendingResult.myTrending)
-                self.saveDataTrending(objects: self.myTrendings)
                 completion(true)
             case .failure(let error):
                 print(error.localizedDescription)
@@ -27,24 +26,11 @@ final class HomeViewModel {
             switch result {
             case .success(let channelResult):
                 self.myChannels.append(contentsOf: channelResult.myChannel)
-                self.saveDataChannel(objects: self.myChannels)
                 completion(true)
             case .failure(let error):
                 print(error.localizedDescription)
                 completion(false)
             }
-        }
-    }
-
-    func saveDataTrending(objects: [Trending]) {
-        for item in objects {
-            myTrendings.append(item)
-        }
-    }
-
-    func saveDataChannel(objects: [Channel]) {
-        for item in objects {
-            myChannels.append(item)
         }
     }
 }

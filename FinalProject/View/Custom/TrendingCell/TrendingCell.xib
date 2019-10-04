@@ -67,14 +67,6 @@
                 <constraint firstItem="mvk-Wd-xnl" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="xsx-vS-qSz"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <userDefinedRuntimeAttributes>
-                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                    <color key="value" red="1" green="0.03624573524" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                </userDefinedRuntimeAttribute>
-                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                    <real key="value" value="0.5"/>
-                </userDefinedRuntimeAttribute>
-            </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="timeLabel" destination="P3j-cT-baH" id="rFs-xQ-Bo8"/>
                 <outlet property="titleLabel" destination="6eW-oo-Ft6" id="ba5-z5-PHh"/>

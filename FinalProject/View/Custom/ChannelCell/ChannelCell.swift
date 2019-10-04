@@ -10,6 +10,9 @@ import UIKit
 
 final class ChannelCell: UICollectionViewCell {
 
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var videoImage: UIImageView!
+
     var viewModel: ChannelCellModel? {
         didSet {
             updateUI()
@@ -22,11 +25,7 @@ final class ChannelCell: UICollectionViewCell {
         videoImage.sd_setImage(with: URL(string: viewModel.imageURL))
     }
 
-    @IBOutlet private weak var titleLabel: UILabel!
-    @IBOutlet private weak var videoImage: UIImageView!
-
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-
 }
