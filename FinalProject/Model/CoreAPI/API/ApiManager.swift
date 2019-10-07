@@ -42,7 +42,14 @@ extension ApiManager.Path {
         let maxResults: Int
         let keySearch: String
         let keyID: String
-        var urlString: String { return ChannelSnippet.path + "part=snippet&maxResults=\(maxResults)&order=relevance&q=\(keySearch)&key=\(keyID)" }
+        var urlString: String { return ChannelSnippet.path + "part=snippet&maxResults=\(maxResults)&type=channel&order=relevance&q=\(keySearch)&key=\(keyID)" }
+    }
+
+    struct ChannelVideosSnippet: ApiPath {
+        static var path: String { return baseURL / "v3/search?" }
+        let maxResults: Int
+        let keyID: String
+        var urlString: String { return ChannelVideosSnippet.path + "part=snippet,id&order=date&maxResults=\(maxResults)&key=\(keyID)" }
     }
 
     struct CommentSnippet: ApiPath {

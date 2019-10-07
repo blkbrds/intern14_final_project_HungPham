@@ -56,6 +56,7 @@
                 </userDefinedRuntimeAttribute>
             </userDefinedRuntimeAttributes>
             <connections>
+                <outlet property="moreButton" destination="2QH-0H-NrB" id="V02-o2-Vhd"/>
                 <outlet property="titleHeaderLabel" destination="DEt-ps-Dhm" id="kvN-9Q-eXE"/>
             </connections>
         </collectionReusableView>
