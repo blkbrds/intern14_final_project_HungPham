@@ -14,6 +14,16 @@ extension App {
 
 extension App.String {
 
+    static let sportTitle = "Sport Videos".localized()
+    static let sportKeySearch = "Sports".localized()
+    static let musicTitle = "Music Videos".localized()
+    static let musicKeySearch = "Musics".localized()
+    static let amazingTitle = "Amazing Videos".localized()
+    static let amazingKeySearch = "Amazing".localized()
+    static let gamingTitle = "Gaming Videos".localized()
+    static let gamingKeySearch = "Gaming".localized()
+    static let funnyTitle = "Funny Videos".localized()
+    static let funnyKeySearch = "Funny".localized()
     static let commentHeader = "Comments :".localized()
     static let homeTitle = "YOUTUBE".localized()
     static let searchTitle = "Search".localized()

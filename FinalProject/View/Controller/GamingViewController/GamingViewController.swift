@@ -1,8 +1,8 @@
 import UIKit
 
-final class ChannelLoadMoreViewController: UIViewController {
+final class GamingViewController: UIViewController {
 
-    var viewModel = ChannelLoadMoreViewModel()
+    var viewModel = GamingViewModel()
     var isLoadApi = false
 
     @IBOutlet private weak var collectionView: UICollectionView!
@@ -13,10 +13,10 @@ final class ChannelLoadMoreViewController: UIViewController {
     }
 
     func configUI() {
-        title = App.String.channelVideos
+        title = App.String.gamingTitle
         navigationController?.navigationBar.backgroundColor = .red
 
-        collectionView.register(UINib(nibName: "ChannelVideosCell", bundle: nil), forCellWithReuseIdentifier: "channelVideos")
+        collectionView.register(UINib(nibName: "ChannelVideosCell", bundle: nil), forCellWithReuseIdentifier: "gamingVideo")
         collectionView.dataSource = self
         collectionView.delegate = self
 
@@ -39,22 +39,22 @@ final class ChannelLoadMoreViewController: UIViewController {
     }
 }
 
-extension ChannelLoadMoreViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension GamingViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.numberOfItems(in: section)
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "channelVideos", for: indexPath) as? ChannelVideosCell else { return UICollectionViewCell() }
-        let myChannels = viewModel.getChannel(with: indexPath)
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "gamingVideo", for: indexPath) as? ChannelVideosCell else { return UICollectionViewCell() }
+        let myChannels = viewModel.getGamingVideos(with: indexPath)
         let cellViewModel = ChannelVideosCellModel(myChannel: myChannels)
         cell.viewModel = cellViewModel
         return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if indexPath.row == viewModel.myChannels.count - 4 {
+        if indexPath.row == viewModel.gamingVideos.count - 4 {
             getData(isLoadMore: true)
         }
     }

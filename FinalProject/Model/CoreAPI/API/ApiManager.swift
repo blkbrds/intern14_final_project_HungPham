@@ -31,6 +31,12 @@ extension ApiManager.Path {
         var urlString: String { return SearchSnippet.path + "part=snippet&maxResults=\(maxResults)&key=\(keyID)" }
     }
 
+    struct CategorySnippet: ApiPath {
+        static var path: String { return baseURL / "v3/search?" }
+        let maxResults: Int
+        var urlString: String { return CategorySnippet.path + "part=snippet&maxResults=\(maxResults)" }
+    }
+
     struct ChannelSnippet: ApiPath {
         static var path: String { return baseURL / "v3/search?" }
         let maxResults: Int
