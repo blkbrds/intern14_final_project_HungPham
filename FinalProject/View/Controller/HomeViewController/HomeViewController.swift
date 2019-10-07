@@ -87,9 +87,15 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.section == 0 {
             let vc = DetailViewController()
             vc.viewModel = DetailViewModel(video: viewmodel.myTrendings[indexPath.row])
             navigationController?.pushViewController(vc, animated: true)
+        } else {
+            let vc = ChannelVideosViewController()
+            vc.viewModel = ChannelVideosViewModel(video: viewmodel.myChannels[indexPath.row])
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
 
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -103,10 +109,10 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             headerView.delegate = self
             if indexPath.section == 0 {
                 headerView.titleHeaderLabel.text = App.String.topTrending
-                headerView.isClickedTitle = true
+                headerView.checkTitle = true
             } else {
                 headerView.titleHeaderLabel.text = App.String.channelTitle
-                headerView.isClickedTitle = false
+                headerView.checkTitle = false
             }
             return headerView
         default:

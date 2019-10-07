@@ -1,11 +1,3 @@
-//
-//  TitleHeader.swift
-//  FinalProject
-//
-//  Created by PCI0010 on 9/30/19.
-//  Copyright © 2019 Asiantech. All rights reserved.
-//
-
 import UIKit
 
 protocol TitleHeaderViewDelegate: class {
@@ -15,14 +7,15 @@ protocol TitleHeaderViewDelegate: class {
 
 final class TitleHeaderView: UICollectionReusableView {
 
-    var isClickedTitle = true
+    var checkTitle = true
 
     @IBOutlet weak var titleHeaderLabel: UILabel!
+    @IBOutlet weak var moreButton: UIButton!
 
     weak var delegate: TitleHeaderViewDelegate?
 
     @IBAction private func moreButton(_ sender: UIButton) {
-        if isClickedTitle {
+        if checkTitle {
             delegate?.tapMoreTrending(self, sender: sender)
         } else {
             delegate?.tapMoreChannel(self, sender: sender)

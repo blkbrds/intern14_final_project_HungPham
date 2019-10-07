@@ -22,6 +22,11 @@ extension ApiManager.Snippet {
         var pageToken: String
     }
 
+    struct ChannelVideosResult {
+        var myChannel: [Channel] = []
+        var pageToken: String
+    }
+
     struct SearchResult {
         var searchedVideos: [Channel] = []
         var pageToken: String
@@ -48,6 +53,10 @@ extension ApiManager.Snippet {
     }
 
     struct QuerryString {
+
+        func getChannelVideos() -> String {
+            return ApiManager.Path.ChannelVideosSnippet(maxResults: App.Number.maxOfResultTrending, keyID: App.KeyUser.keyIdChannel).urlString
+        }
 
         func getCategoryPath() -> String {
             return ApiManager.Path.CategorySnippet(maxResults: App.Number.maxOfResultTrending).urlString
@@ -163,6 +172,31 @@ extension ApiManager.Snippet {
                     }
                     let sportResult = SportResult(sportVideos: sportVideos, pageToken: nextPageToken)
                     completion(.success(sportResult))
+                } else {
+                    completion(.failure(.error("Can't Format Data!")))
+                }
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
+
+    static func getChannelVideosData(pageToken: String, channelId: String, completion: @escaping APICompletion<ChannelVideosResult>) {
+
+        let urlString = QuerryString().getChannelVideos() + "&pageToken=\(pageToken)" + "&channelId=\(channelId)"
+        API.shared().request(urlString: urlString) { result in
+            switch result {
+            case .success(let data):
+                if let data = data {
+                    let json = data.convertToJSON()
+                    guard let nextPageToken = json["nextPageToken"] as? String, let items = json["items"] as? [JSON] else { return }
+                    var myChannels: [Channel] = []
+                    for dic in items {
+                        let myChannel = Channel(dic: dic)
+                        myChannels.append(myChannel)
+                    }
+                    let channelVideosResult = ChannelVideosResult(myChannel: myChannels, pageToken: nextPageToken)
+                    completion(.success(channelVideosResult))
                 } else {
                     completion(.failure(.error("Can't Format Data!")))
                 }
