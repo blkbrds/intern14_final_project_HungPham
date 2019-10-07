@@ -95,8 +95,6 @@
 		73F5DF522343029C00468A09 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F5DF502343029C00468A09 /* DetailViewController.swift */; };
 		73F5DF532343029C00468A09 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73F5DF512343029C00468A09 /* DetailViewController.xib */; };
 		73F5DF55234302A500468A09 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F5DF54234302A500468A09 /* DetailViewModel.swift */; };
-		73F5DF67234350D000468A09 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F5DF65234350D000468A09 /* VideoViewController.swift */; };
-		73F5DF68234350D000468A09 /* VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73F5DF66234350D000468A09 /* VideoViewController.xib */; };
 		8882DA0118142BBAD083DDD9 /* Pods_FinalProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5084BD3D925876C8DE2E9504 /* Pods_FinalProject.framework */; };
 /* End PBXBuildFile section */
 
@@ -205,8 +203,6 @@
 		73F5DF502343029C00468A09 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		73F5DF512343029C00468A09 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		73F5DF54234302A500468A09 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
-		73F5DF65234350D000468A09 /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
-		73F5DF66234350D000468A09 /* VideoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoViewController.xib; sourceTree = "<group>"; };
 		7EB1AD2584DB4F2ED9CCF8A4 /* Pods-FinalProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinalProjectTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FinalProjectTests/Pods-FinalProjectTests.release.xcconfig"; sourceTree = "<group>"; };
 		D72EC1050944689B4414E5C7 /* Pods-FinalProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinalProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FinalProject/Pods-FinalProject.debug.xcconfig"; sourceTree = "<group>"; };
 		DD4A2FBD85737A9282EA2264 /* Pods-FinalProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinalProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-FinalProject/Pods-FinalProject.release.xcconfig"; sourceTree = "<group>"; };
@@ -314,7 +310,6 @@
 				73EF3463234735E400ADF66A /* CategoryViewController */,
 				73EF34552347239500ADF66A /* ChannelLoadMore */,
 				73EF50442344B1FF00963862 /* FavoriteViewController */,
-				73F5DF64234350B900468A09 /* VideoViewController */,
 				73F5DF4F2343007900468A09 /* DetailViewController */,
 				730C85DF2341EB8100B9EE8B /* TrendingLoadMore */,
 				730C85982341971B00B9EE8B /* HomeViewController */,
@@ -639,15 +634,6 @@
 			path = DetailViewController;
 			sourceTree = "<group>";
 		};
-		73F5DF64234350B900468A09 /* VideoViewController */ = {
-			isa = PBXGroup;
-			children = (
-				73F5DF65234350D000468A09 /* VideoViewController.swift */,
-				73F5DF66234350D000468A09 /* VideoViewController.xib */,
-			);
-			path = VideoViewController;
-			sourceTree = "<group>";
-		};
 		EDAB884D0E9858125EA92DBE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -745,7 +731,6 @@
 				6AFD030A231375EF004940FA /* Assets.xcassets in Resources */,
 				730C85D22341AB9800B9EE8B /* ChannelCell.xib in Resources */,
 				73EF50482344B28500963862 /* FavoriteViewController.xib in Resources */,
-				73F5DF68234350D000468A09 /* VideoViewController.xib in Resources */,
 				73EF348023474D5E00ADF66A /* AmazingViewController.xib in Resources */,
 				73EF5043234496C700963862 /* CommentCell.xib in Resources */,
 				73EF3467234735FF00ADF66A /* CategoryViewController.xib in Resources */,
@@ -920,7 +905,6 @@
 				6AF613C42313C13A00F5CBA2 /* TableCell.swift in Sources */,
 				730C85D12341AB9800B9EE8B /* ChannelCell.swift in Sources */,
 				73EF345B234723CD00ADF66A /* ChannelLoadMoreViewModel.swift in Sources */,
-				73F5DF67234350D000468A09 /* VideoViewController.swift in Sources */,
 				730C85BB2341A95400B9EE8B /* ApiManager.swift in Sources */,
 				73F5DF55234302A500468A09 /* DetailViewModel.swift in Sources */,
 				730C85E52341EBF800B9EE8B /* TrendingLoadMoreViewModel.swift in Sources */,
