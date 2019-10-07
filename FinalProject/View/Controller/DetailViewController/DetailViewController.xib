@@ -16,6 +16,7 @@
                 <outlet property="dislikeLabel" destination="Q1G-76-8q5" id="Ktc-DG-odd"/>
                 <outlet property="infoView" destination="Cb4-b9-79y" id="MQG-0e-9vd"/>
                 <outlet property="likeLabel" destination="GBT-TZ-bWX" id="9AG-gK-g2Q"/>
+                <outlet property="playVideoView" destination="sk0-fh-2n4" id="aKB-Gt-5of"/>
                 <outlet property="playerView" destination="QRg-9B-d1p" id="ePA-NN-FAm"/>
                 <outlet property="publicDateLabel" destination="jo5-Ib-hab" id="76x-ty-QTG"/>
                 <outlet property="tableView" destination="f7F-n2-68e" id="bGN-AI-euH"/>
@@ -47,6 +48,11 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="260"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sk0-fh-2n4" customClass="WKYTPlayerView">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="260"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4T6-rJ-Bf7">
                                         <rect key="frame" x="348" y="235" width="65" height="25"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -55,14 +61,6 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ipJ-Sx-a4l">
-                                        <rect key="frame" x="177" y="100" width="60" height="60"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" image="ic-play-video"/>
-                                        <connections>
-                                            <action selector="playButton:" destination="-1" eventType="touchUpInside" id="SZW-oQ-NNb"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
@@ -126,7 +124,4 @@
             <point key="canvasLocation" x="40.579710144927539" y="39.508928571428569"/>
         </view>
     </objects>
-    <resources>
-        <image name="ic-play-video" width="48" height="48"/>
-    </resources>
 </document>

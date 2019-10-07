@@ -18,6 +18,7 @@ final class DetailViewController: UIViewController {
     @IBOutlet private weak var likeLabel: UILabel!
     @IBOutlet private weak var dislikeLabel: UILabel!
     @IBOutlet private weak var descriptionLabel: UILabel!
+    @IBOutlet private weak var playVideoView: WKYTPlayerView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,12 +29,6 @@ final class DetailViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         checkExistId()
-    }
-
-    @IBAction func playButton(_ sender: UIButton) {
-        let vc = VideoViewController()
-        vc.videoID = viewModel.video.id
-        present(vc, animated: true, completion: nil)
     }
 
     func checkExistId() {
@@ -63,6 +58,8 @@ final class DetailViewController: UIViewController {
     func configUI() {
         title = App.String.detailTitle
         navigationController?.navigationBar.backgroundColor = .red
+
+        playVideoView.load(withVideoId: viewModel.video.id)
 
         tableView.register(UINib(nibName: "CommentCell", bundle: nil), forCellReuseIdentifier: "cell5")
         tableView.delegate = self
