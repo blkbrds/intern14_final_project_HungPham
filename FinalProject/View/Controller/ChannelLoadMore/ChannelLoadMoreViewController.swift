@@ -16,7 +16,7 @@ final class ChannelLoadMoreViewController: UIViewController {
         title = App.String.channelVideos
         navigationController?.navigationBar.backgroundColor = .red
 
-        collectionView.register(UINib(nibName: "ChannelVideosCell", bundle: nil), forCellWithReuseIdentifier: "channelVideos")
+        collectionView.register(UINib(nibName: "ChannelCell", bundle: nil), forCellWithReuseIdentifier: "channelVideos")
         collectionView.dataSource = self
         collectionView.delegate = self
 
@@ -46,9 +46,9 @@ extension ChannelLoadMoreViewController: UICollectionViewDelegate, UICollectionV
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "channelVideos", for: indexPath) as? ChannelVideosCell else { return UICollectionViewCell() }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "channelVideos", for: indexPath) as? ChannelCell else { return UICollectionViewCell() }
         let myChannels = viewModel.getChannel(with: indexPath)
-        let cellViewModel = ChannelVideosCellModel(myChannel: myChannels)
+        let cellViewModel = ChannelCellModel(myChannel: myChannels)
         cell.viewModel = cellViewModel
         return cell
     }
@@ -60,7 +60,7 @@ extension ChannelLoadMoreViewController: UICollectionViewDelegate, UICollectionV
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 200, height: 180)
+        return CGSize(width: 405, height: 49)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
