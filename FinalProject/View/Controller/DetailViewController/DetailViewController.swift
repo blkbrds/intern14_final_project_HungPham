@@ -9,7 +9,6 @@ final class DetailViewController: UIViewController {
 
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var playerView: UIView!
-    @IBOutlet private weak var videoImage: UIImageView!
     @IBOutlet private weak var timeLabel: UILabel!
     @IBOutlet private weak var infoView: UIView!
     @IBOutlet private weak var titleLabel: UILabel!
@@ -89,7 +88,6 @@ final class DetailViewController: UIViewController {
     }
 
     func configThumbnail() {
-        videoImage.sd_setImage(with: URL(string: viewModel.video.imageURL))
         timeLabel.text = viewModel.video.duration.replacingOccurrences(of: "PT", with: "")
             .replacingOccurrences(of: "H", with: ":")
             .replacingOccurrences(of: "M", with: ":")

@@ -126,9 +126,9 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if indexPath.section == 0 {
-            return CGSize(width: 200, height: 180)
+            return CGSize(width: (UIScreen.main.bounds.width - 15) / 2, height: 160)
         }
-        return CGSize(width: 405, height: 49)
+        return CGSize(width: UIScreen.main.bounds.width - 9, height: 49)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

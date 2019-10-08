@@ -25,10 +25,6 @@
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6eW-oo-Ft6">
                         <rect key="frame" x="0.0" y="0.0" width="200" height="29"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="200" id="3mm-b3-lGC"/>
-                            <constraint firstAttribute="height" constant="29" id="wxw-Cd-4MP"/>
-                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                         <color key="textColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                         <nil key="highlightedColor"/>
@@ -36,35 +32,25 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P3j-cT-baH">
                         <rect key="frame" x="150" y="142" width="50" height="18"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="50" id="KYp-ue-ywS"/>
-                            <constraint firstAttribute="height" constant="18" id="zbc-KS-vNs"/>
-                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qo3-5x-nfx">
-                        <rect key="frame" x="76" y="56" width="48" height="48"/>
-                        <state key="normal" image="ic-play-video"/>
-                    </button>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="6eW-oo-Ft6" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="7ir-5T-7cV"/>
-                <constraint firstItem="6eW-oo-Ft6" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="AAo-Rp-4Uu"/>
-                <constraint firstAttribute="trailing" secondItem="6eW-oo-Ft6" secondAttribute="trailing" id="DfO-D5-sPQ"/>
-                <constraint firstAttribute="bottom" secondItem="qo3-5x-nfx" secondAttribute="bottom" constant="56" id="KbH-pa-kDe"/>
-                <constraint firstItem="qo3-5x-nfx" firstAttribute="top" secondItem="6eW-oo-Ft6" secondAttribute="bottom" constant="27" id="LGE-s9-Uql"/>
-                <constraint firstAttribute="trailing" secondItem="qo3-5x-nfx" secondAttribute="trailing" constant="76" id="U35-UU-nSY"/>
-                <constraint firstItem="qo3-5x-nfx" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="76" id="hpR-oD-iip"/>
-                <constraint firstItem="mvk-Wd-xnl" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="i4x-ki-lcc"/>
-                <constraint firstAttribute="trailing" secondItem="mvk-Wd-xnl" secondAttribute="trailing" id="jDh-eA-ZpN"/>
-                <constraint firstAttribute="bottom" secondItem="P3j-cT-baH" secondAttribute="bottom" id="lHo-fF-ijb"/>
-                <constraint firstItem="qo3-5x-nfx" firstAttribute="top" secondItem="6eW-oo-Ft6" secondAttribute="bottom" constant="27" id="nap-f9-qbI"/>
-                <constraint firstAttribute="trailing" secondItem="P3j-cT-baH" secondAttribute="trailing" id="rea-tQ-YQz"/>
-                <constraint firstAttribute="bottom" secondItem="mvk-Wd-xnl" secondAttribute="bottom" id="sJ9-Xj-ieK"/>
-                <constraint firstItem="mvk-Wd-xnl" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="xsx-vS-qSz"/>
+                <constraint firstItem="P3j-cT-baH" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="150" id="33M-hp-zm0"/>
+                <constraint firstItem="P3j-cT-baH" firstAttribute="top" secondItem="6eW-oo-Ft6" secondAttribute="bottom" constant="113" id="4zr-ZP-DYt"/>
+                <constraint firstAttribute="trailing" secondItem="6eW-oo-Ft6" secondAttribute="trailing" id="CbP-uc-SwI"/>
+                <constraint firstAttribute="bottom" secondItem="mvk-Wd-xnl" secondAttribute="bottom" id="F7g-UC-rYa"/>
+                <constraint firstAttribute="trailing" secondItem="P3j-cT-baH" secondAttribute="trailing" id="P9W-bz-HDX"/>
+                <constraint firstItem="6eW-oo-Ft6" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="bvN-pq-ImJ"/>
+                <constraint firstAttribute="bottom" secondItem="P3j-cT-baH" secondAttribute="bottom" id="dfv-H7-dCv"/>
+                <constraint firstItem="6eW-oo-Ft6" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="eI3-3f-pwd"/>
+                <constraint firstItem="mvk-Wd-xnl" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="gIB-2j-XPe"/>
+                <constraint firstAttribute="trailing" secondItem="mvk-Wd-xnl" secondAttribute="trailing" id="hlw-FB-Ojj"/>
+                <constraint firstItem="mvk-Wd-xnl" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="jCr-E4-TIs"/>
+                <constraint firstAttribute="bottom" secondItem="6eW-oo-Ft6" secondAttribute="bottom" constant="131" id="ucP-qK-UuP"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <connections>
@@ -74,7 +60,4 @@
             </connections>
         </collectionViewCell>
     </objects>
-    <resources>
-        <image name="ic-play-video" width="48" height="48"/>
-    </resources>
 </document>

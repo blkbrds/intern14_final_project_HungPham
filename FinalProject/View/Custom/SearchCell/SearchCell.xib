@@ -20,56 +20,44 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7ek-O6-tGs">
-                        <rect key="frame" x="0.0" y="0.0" width="120" height="120.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="120" height="119.5"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="120" id="7oO-zp-06e"/>
-                            <constraint firstAttribute="height" constant="120.5" id="uFd-jj-kNm"/>
+                            <constraint firstAttribute="width" constant="120" id="5DZ-RH-e3g"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DANCER REACTS TO TWICE &amp;quot;Feel Special&amp;quot; Dance Practice Video" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pgy-UH-FYi">
-                        <rect key="frame" x="128" y="0.0" width="286" height="40"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="40" id="K6U-tc-WV0"/>
-                            <constraint firstAttribute="width" constant="286" id="aIG-vZ-a3e"/>
-                        </constraints>
+                        <rect key="frame" x="128" y="0.0" width="286" height="31.5"/>
                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dhm-xa-8g1">
-                        <rect key="frame" x="128" y="48" width="286" height="50"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="50" id="Oi9-g8-Phs"/>
-                            <constraint firstAttribute="width" constant="286" id="UZr-h0-oSK"/>
-                        </constraints>
+                        <rect key="frame" x="128" y="39.5" width="286" height="43"/>
                         <string key="text">My hair looks derp dud Instagram: https://www.instagram.com/omar_kayali/ Twitter: https://twitter.com/MrOkayDance Outro song: ...</string>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2019-10-03T19:47:49.000Z" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bcE-go-Pob">
-                        <rect key="frame" x="248" y="106" width="166" height="14.5"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="166" id="4VU-pD-9I0"/>
-                            <constraint firstAttribute="height" constant="14.5" id="z5F-kb-mBC"/>
-                        </constraints>
+                        <rect key="frame" x="255" y="102.5" width="159" height="14.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="Pgy-UH-FYi" secondAttribute="trailing" id="DCH-dm-A3A"/>
-                    <constraint firstItem="Pgy-UH-FYi" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Fc1-gl-VSh"/>
-                    <constraint firstAttribute="bottom" secondItem="bcE-go-Pob" secondAttribute="bottom" id="RkY-K2-6W0"/>
-                    <constraint firstItem="7ek-O6-tGs" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Xmy-IS-7R1"/>
-                    <constraint firstAttribute="trailing" secondItem="Dhm-xa-8g1" secondAttribute="trailing" id="cpS-qL-Mfp"/>
-                    <constraint firstAttribute="trailing" secondItem="bcE-go-Pob" secondAttribute="trailing" id="dHQ-15-6E4"/>
-                    <constraint firstItem="bcE-go-Pob" firstAttribute="top" secondItem="Dhm-xa-8g1" secondAttribute="bottom" constant="8" id="icH-4s-NWP"/>
-                    <constraint firstAttribute="bottom" secondItem="7ek-O6-tGs" secondAttribute="bottom" id="peg-Py-eTx"/>
-                    <constraint firstItem="Dhm-xa-8g1" firstAttribute="top" secondItem="Pgy-UH-FYi" secondAttribute="bottom" constant="8" id="sZX-Ha-dYL"/>
-                    <constraint firstItem="Dhm-xa-8g1" firstAttribute="leading" secondItem="7ek-O6-tGs" secondAttribute="trailing" constant="8" id="xyW-8t-qk0"/>
-                    <constraint firstItem="7ek-O6-tGs" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="zqv-0a-aMV"/>
+                    <constraint firstItem="Dhm-xa-8g1" firstAttribute="leading" secondItem="7ek-O6-tGs" secondAttribute="trailing" constant="8" id="0C7-gB-Zoa"/>
+                    <constraint firstItem="Pgy-UH-FYi" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="5qV-XZ-zzw"/>
+                    <constraint firstAttribute="trailing" secondItem="Pgy-UH-FYi" secondAttribute="trailing" id="Ix8-uG-hjx"/>
+                    <constraint firstItem="Dhm-xa-8g1" firstAttribute="top" secondItem="Pgy-UH-FYi" secondAttribute="bottom" constant="8" id="Jpb-Tf-dvM"/>
+                    <constraint firstAttribute="trailing" secondItem="bcE-go-Pob" secondAttribute="trailing" id="MJO-Pb-ZLo"/>
+                    <constraint firstAttribute="bottom" secondItem="7ek-O6-tGs" secondAttribute="bottom" id="MfN-8K-lIM"/>
+                    <constraint firstAttribute="trailing" secondItem="Dhm-xa-8g1" secondAttribute="trailing" id="OtG-Vg-VgC"/>
+                    <constraint firstAttribute="bottom" secondItem="bcE-go-Pob" secondAttribute="bottom" constant="2.5" id="TSy-Kz-qpT"/>
+                    <constraint firstItem="7ek-O6-tGs" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="U37-YA-JQX"/>
+                    <constraint firstItem="7ek-O6-tGs" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="fxr-EF-VBX"/>
+                    <constraint firstItem="Pgy-UH-FYi" firstAttribute="leading" secondItem="7ek-O6-tGs" secondAttribute="trailing" constant="8" id="hg0-AJ-GOt"/>
+                    <constraint firstItem="bcE-go-Pob" firstAttribute="top" secondItem="Dhm-xa-8g1" secondAttribute="bottom" constant="20" id="saY-w0-hGd"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
