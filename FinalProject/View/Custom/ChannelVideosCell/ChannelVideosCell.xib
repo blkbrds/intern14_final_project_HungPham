@@ -24,49 +24,31 @@
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6LN-W9-ph4">
-                        <rect key="frame" x="0.0" y="0.0" width="200" height="29"/>
+                        <rect key="frame" x="0.0" y="0.0" width="200" height="40"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="200" id="00w-gR-K8U"/>
-                            <constraint firstAttribute="height" constant="29" id="s5w-Au-Vuv"/>
+                            <constraint firstAttribute="height" constant="40" id="aa0-h2-SC8"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rck-hH-k9s">
-                        <rect key="frame" x="76" y="56" width="48" height="48"/>
-                        <state key="normal" image="ic-play-video"/>
-                        <connections>
-                            <action selector="playButton:" destination="gTV-IL-0wX" eventType="touchUpInside" id="amb-C3-e5n"/>
-                        </connections>
-                    </button>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="6LN-W9-ph4" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="0rY-Y6-XeX"/>
-                <constraint firstAttribute="bottom" secondItem="1Ur-Eo-aCn" secondAttribute="bottom" id="32a-r3-oPQ"/>
-                <constraint firstItem="1Ur-Eo-aCn" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="8WJ-ll-Agv"/>
-                <constraint firstItem="Rck-hH-k9s" firstAttribute="top" secondItem="6LN-W9-ph4" secondAttribute="bottom" constant="27" id="V6H-UE-XDN"/>
-                <constraint firstItem="1Ur-Eo-aCn" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="VEa-6w-7gR"/>
-                <constraint firstItem="6LN-W9-ph4" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Vrn-lm-ggP"/>
-                <constraint firstAttribute="trailing" secondItem="6LN-W9-ph4" secondAttribute="trailing" id="YEH-92-jjJ"/>
-                <constraint firstAttribute="trailing" secondItem="1Ur-Eo-aCn" secondAttribute="trailing" id="akJ-7O-QYc"/>
-                <constraint firstItem="1Ur-Eo-aCn" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="cFO-ja-Sps"/>
-                <constraint firstAttribute="bottom" secondItem="Rck-hH-k9s" secondAttribute="bottom" constant="56" id="fda-Pg-qeH"/>
-                <constraint firstItem="1Ur-Eo-aCn" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="kcu-pN-NZ8"/>
-                <constraint firstItem="Rck-hH-k9s" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="76" id="r0p-P5-Ob2"/>
-                <constraint firstAttribute="trailing" secondItem="1Ur-Eo-aCn" secondAttribute="trailing" id="sJr-T7-MIL"/>
-                <constraint firstAttribute="trailing" secondItem="Rck-hH-k9s" secondAttribute="trailing" constant="76" id="vxE-Zs-BRT"/>
-                <constraint firstAttribute="bottom" secondItem="1Ur-Eo-aCn" secondAttribute="bottom" id="w6w-aC-Mrv"/>
+                <constraint firstItem="6LN-W9-ph4" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="5Nt-wm-kpN"/>
+                <constraint firstAttribute="bottom" secondItem="1Ur-Eo-aCn" secondAttribute="bottom" id="Q0z-sZ-Prd"/>
+                <constraint firstAttribute="trailing" secondItem="6LN-W9-ph4" secondAttribute="trailing" id="QPV-9Z-vnB"/>
+                <constraint firstItem="1Ur-Eo-aCn" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="dlc-0L-hVd"/>
+                <constraint firstItem="6LN-W9-ph4" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="fk3-lz-CMx"/>
+                <constraint firstItem="1Ur-Eo-aCn" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="fmU-pu-4md"/>
+                <constraint firstAttribute="trailing" secondItem="1Ur-Eo-aCn" secondAttribute="trailing" id="tgK-7O-Xnl"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <connections>
                 <outlet property="titleLabel" destination="6LN-W9-ph4" id="QS7-Hr-Cec"/>
                 <outlet property="videoImageView" destination="1Ur-Eo-aCn" id="079-Fm-RiJ"/>
             </connections>
+            <point key="canvasLocation" x="37.681159420289859" y="34.821428571428569"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <image name="ic-play-video" width="48" height="48"/>
-    </resources>
 </document>

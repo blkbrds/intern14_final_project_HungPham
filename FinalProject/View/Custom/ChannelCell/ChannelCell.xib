@@ -21,6 +21,9 @@
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-youtube" translatesAutoresizingMaskIntoConstraints="NO" id="01R-3h-vy5">
                         <rect key="frame" x="20" y="4" width="50" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="6TL-Qv-bry"/>
+                        </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                 <real key="value" value="20"/>
@@ -36,8 +39,7 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cô Thắm Không Về (DinhLong Remix) - Phát Hồ x JokeS Bii x Sinike | Nhạc Trẻ TikTok Gây Nghiện 2019" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="STb-0j-kQo">
                         <rect key="frame" x="78" y="4" width="336" height="40"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="40" id="K1c-5l-fEq"/>
-                            <constraint firstAttribute="width" constant="336" id="S7E-C8-fsf"/>
+                            <constraint firstAttribute="width" constant="336" id="sid-q5-Mdu"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                         <nil key="textColor"/>
@@ -46,13 +48,13 @@
                 </subviews>
             </view>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="STb-0j-kQo" secondAttribute="trailing" id="1BO-eO-zwF"/>
-                <constraint firstItem="01R-3h-vy5" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="4" id="3og-vw-4Wo"/>
-                <constraint firstAttribute="bottom" secondItem="STb-0j-kQo" secondAttribute="bottom" constant="5.5" id="62Y-5Q-jaH"/>
-                <constraint firstItem="STb-0j-kQo" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="4" id="Axi-N0-seh"/>
-                <constraint firstItem="STb-0j-kQo" firstAttribute="leading" secondItem="01R-3h-vy5" secondAttribute="trailing" constant="8" id="Xid-PR-ziu"/>
-                <constraint firstItem="01R-3h-vy5" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="jxp-Z3-IhV"/>
-                <constraint firstAttribute="bottom" secondItem="01R-3h-vy5" secondAttribute="bottom" constant="5.5" id="tbd-p5-7s9"/>
+                <constraint firstAttribute="bottom" secondItem="01R-3h-vy5" secondAttribute="bottom" constant="5.5" id="0nT-2O-4AV"/>
+                <constraint firstItem="01R-3h-vy5" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="2pj-JX-fYc"/>
+                <constraint firstItem="STb-0j-kQo" firstAttribute="leading" secondItem="01R-3h-vy5" secondAttribute="trailing" constant="8" id="Jsh-l3-hhi"/>
+                <constraint firstAttribute="bottom" secondItem="STb-0j-kQo" secondAttribute="bottom" constant="5.5" id="NwJ-AM-p4a"/>
+                <constraint firstItem="STb-0j-kQo" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="4" id="dKv-Dq-KOd"/>
+                <constraint firstAttribute="trailing" secondItem="STb-0j-kQo" secondAttribute="trailing" id="kHn-ma-70h"/>
+                <constraint firstItem="01R-3h-vy5" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="4" id="wZM-dm-mRh"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <connections>
