@@ -454,7 +454,6 @@
 		730C85C32341AA0F00B9EE8B /* Custom */ = {
 			isa = PBXGroup;
 			children = (
-				73EFDACE234C1DBA00F53743 /* New Group */,
 				73EF345C2347278900ADF66A /* ChannelVideosCell */,
 				73ED37132346D9AC00010F2C /* SearchCell */,
 				73EF504B2344B31F00963862 /* FavoriteCell */,
@@ -630,13 +629,6 @@
 				73EF50502344B55900963862 /* FavoriteCellModel.swift */,
 			);
 			path = FavoriteCell;
-			sourceTree = "<group>";
-		};
-		73EFDACE234C1DBA00F53743 /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
 			sourceTree = "<group>";
 		};
 		73F5DF4F2343007900468A09 /* DetailViewController */ = {
