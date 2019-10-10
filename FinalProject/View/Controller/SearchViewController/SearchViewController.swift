@@ -11,6 +11,7 @@ final class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configUI()
+        viewModel.delegate = self
     }
 
     func configUI() {
@@ -68,6 +69,14 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.row == viewModel.searchedVideo.count - 4 {
             getData(isLoadMore: true)
         }
+    }
+}
+
+// MARK: - SearchViewModelDelegate
+extension SearchViewController: SearchViewModelDelegate {
+    
+    func handleApiError(error: Error) {
+        alert(msg: error.localizedDescription, handler: nil)
     }
 }
 

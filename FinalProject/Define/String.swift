@@ -27,7 +27,7 @@ extension App.String {
     static let commentHeader = "Comments :".localized()
     static let homeTitle = "YOUTUBE".localized()
     static let searchTitle = "Search".localized()
-    static let favoriteTitle = "Favorite".localized()
+    static let favoriteTitle = "FAVORITE".localized()
     static let topTrending = "Top 10 Trending".localized()
     static let trendingVideos = "Top Trending".localized()
     static let channelVideos = "List Channels".localized()
