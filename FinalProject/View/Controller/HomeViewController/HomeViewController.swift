@@ -167,11 +167,7 @@ extension HomeViewController: TitleHeaderViewDelegate {
 
 extension HomeViewController: HomeViewModelDelegate {
 
-    func handleTrendingApiError(error: Error) {
-        alert(msg: error.localizedDescription, handler: nil)
-    }
-
-    func handleChannelApiError(error: Error) {
+    func handleApiError(error: Error) {
         alert(msg: error.localizedDescription, handler: nil)
     }
 }

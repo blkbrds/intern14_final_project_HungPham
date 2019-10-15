@@ -4,9 +4,7 @@ import RealmSwift
 
 protocol HomeViewModelDelegate: class {
 
-    func handleTrendingApiError(error: Error)
-
-    func handleChannelApiError(error: Error)
+    func handleApiError(error: Error)
 }
 
 final class HomeViewModel {
@@ -24,7 +22,7 @@ final class HomeViewModel {
                 this.myTrendings.append(contentsOf: trendingResult.myTrending)
                 completion(true)
             case .failure(let error):
-                this.delegate?.handleTrendingApiError(error: error)
+                this.delegate?.handleApiError(error: error)
                 completion(false)
             }
         }
@@ -38,7 +36,7 @@ final class HomeViewModel {
                 this.myChannels.append(contentsOf: channelResult.myChannel)
                 completion(true)
             case .failure(let error):
-                this.delegate?.handleChannelApiError(error: error)
+                this.delegate?.handleApiError(error: error)
                 completion(false)
             }
         }
