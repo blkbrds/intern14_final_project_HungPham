@@ -2,10 +2,16 @@ import Foundation
 import UIKit
 import RealmSwift
 
+protocol HomeViewModelDelegate: class {
+
+    func handleApiError(error: Error)
+}
+
 final class HomeViewModel {
 
     var myTrendings: [Trending] = []
     var myChannels: [Channel] = []
+    weak var delegate: HomeViewModelDelegate?
 
     // Mark : - Load Data From API
     func loadDataTrending(completion: @escaping (Bool) -> Void) {
@@ -16,7 +22,7 @@ final class HomeViewModel {
                 this.myTrendings.append(contentsOf: trendingResult.myTrending)
                 completion(true)
             case .failure(let error):
-                print(error.localizedDescription)
+                this.delegate?.handleApiError(error: error)
                 completion(false)
             }
         }
@@ -30,7 +36,7 @@ final class HomeViewModel {
                 this.myChannels.append(contentsOf: channelResult.myChannel)
                 completion(true)
             case .failure(let error):
-                print(error.localizedDescription)
+                this.delegate?.handleApiError(error: error)
                 completion(false)
             }
         }

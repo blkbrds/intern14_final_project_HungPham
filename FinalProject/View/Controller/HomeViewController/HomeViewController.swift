@@ -10,6 +10,7 @@ final class HomeViewController: UIViewController {
         super.viewDidLoad()
         configData()
         configUI()
+        viewmodel.delegate = self
     }
 
     func configUI() {
@@ -161,5 +162,12 @@ extension HomeViewController: TitleHeaderViewDelegate {
 
     func tapMoreChannel(_ titleHeaderView: TitleHeaderView, sender: UIButton) {
         navigationController?.pushViewController(ChannelLoadMoreViewController(), animated: true)
+    }
+}
+
+extension HomeViewController: HomeViewModelDelegate {
+
+    func handleApiError(error: Error) {
+        alert(msg: error.localizedDescription, handler: nil)
     }
 }
