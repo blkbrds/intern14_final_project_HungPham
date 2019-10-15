@@ -1,5 +1,12 @@
 PODS:
   - Alamofire (4.8.2)
+  - GoogleMaps (3.4.0):
+    - GoogleMaps/Maps (= 3.4.0)
+  - GoogleMaps/Base (3.4.0)
+  - GoogleMaps/Maps (3.4.0):
+    - GoogleMaps/Base
+  - GooglePlaces (3.4.0):
+    - GoogleMaps/Base (= 3.4.0)
   - IQKeyboardManagerSwift (6.0.5)
   - MVVM-Swift (1.1.0)
   - ObjectMapper (3.3.0)
@@ -33,10 +40,13 @@ PODS:
   - SwifterSwift/UIKit (5.0.0)
   - SwiftLint (0.27.0)
   - SwiftUtils (4.2)
+  - SwiftyJSON (5.0.0)
   - YoutubePlayer-in-WKWebView (0.3.2)
 
 DEPENDENCIES:
   - Alamofire (= 4.8.2)
+  - GoogleMaps
+  - GooglePlaces
   - IQKeyboardManagerSwift (~> 6.0.4)
   - MVVM-Swift (= 1.1.0)
   - ObjectMapper (= 3.3.0)
@@ -46,11 +56,14 @@ DEPENDENCIES:
   - SwifterSwift (~> 5.0)
   - SwiftLint (= 0.27.0)
   - SwiftUtils (= 4.2)
+  - SwiftyJSON
   - YoutubePlayer-in-WKWebView
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - GoogleMaps
+    - GooglePlaces
     - IQKeyboardManagerSwift
     - MVVM-Swift
     - ObjectMapper
@@ -61,10 +74,13 @@ SPEC REPOS:
     - SwifterSwift
     - SwiftLint
     - SwiftUtils
+    - SwiftyJSON
     - YoutubePlayer-in-WKWebView
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  GoogleMaps: 67f4a604f80dd6a22d09c2a507a3a395b9f23060
+  GooglePlaces: 7547289e3fffc8980f4a027be99888e29d59b15d
   IQKeyboardManagerSwift: c14eca30f6001457d6ddf25e313f23fb6578c41c
   MVVM-Swift: 54749cc12bb30af41632f30a2c576a18bf9e4bc8
   ObjectMapper: b612bf8c8e99c4dc0bb6013a51f7c27966ed5da9
@@ -75,8 +91,9 @@ SPEC CHECKSUMS:
   SwifterSwift: 96f90594b370802f01647c2b1229c74a84ffafee
   SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
   SwiftUtils: de77bcd1df216c9be6ec7011777302c60a2018a6
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   YoutubePlayer-in-WKWebView: f9c20a456c5d99e5f5248e4d2079a5d3b6950d13
 
-PODFILE CHECKSUM: 952d24f4154e99a9437107227d12178057da7e0a
+PODFILE CHECKSUM: fe3cf3a1c02fb0d818ef03e9b47182eddf747019
 
 COCOAPODS: 1.7.5

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MapViewController" customModule="FinalProject" customModuleProvider="target">
+            <connections>
+                <outlet property="collectionView" destination="0qf-91-ivp" id="DdB-wp-pjD"/>
+                <outlet property="mapView" destination="Leg-9N-eth" id="2xU-gW-ztA"/>
+                <outlet property="subView" destination="9su-BU-xOB" id="CME-CB-VZN"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Leg-9N-eth" customClass="GMSMapView">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PTl-if-Biu">
+                    <rect key="frame" x="372" y="54" width="32" height="32"/>
+                    <state key="normal" image="ic-gps"/>
+                    <connections>
+                        <action selector="currentLocationButton:" destination="-1" eventType="touchUpInside" id="rKh-EI-nkc"/>
+                    </connections>
+                </button>
+                <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9su-BU-xOB">
+                    <rect key="frame" x="10" y="636" width="394" height="216"/>
+                    <subviews>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="0qf-91-ivp">
+                            <rect key="frame" x="0.0" y="0.0" width="394" height="216"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VuU-Ww-pmm">
+                                <size key="itemSize" width="50" height="50"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="15"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </collectionView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="0qf-91-ivp" secondAttribute="trailing" id="6IV-7c-Uml"/>
+                        <constraint firstItem="0qf-91-ivp" firstAttribute="top" secondItem="9su-BU-xOB" secondAttribute="top" id="Dpt-h2-kWZ"/>
+                        <constraint firstItem="0qf-91-ivp" firstAttribute="leading" secondItem="9su-BU-xOB" secondAttribute="leading" id="OdB-1h-uJg"/>
+                        <constraint firstAttribute="bottom" secondItem="0qf-91-ivp" secondAttribute="bottom" id="Sdl-gC-PEy"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="15"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Leg-9N-eth" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="2df-hs-A06"/>
+                <constraint firstItem="PTl-if-Biu" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="9XB-QZ-QlZ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Leg-9N-eth" secondAttribute="trailing" id="Fb5-30-A9y"/>
+                <constraint firstAttribute="trailing" secondItem="9su-BU-xOB" secondAttribute="trailing" constant="10" id="Hv3-8U-6K2"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Leg-9N-eth" secondAttribute="bottom" id="Phf-DO-OcO"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="PTl-if-Biu" secondAttribute="trailing" constant="10" id="TRo-oj-9u5"/>
+                <constraint firstItem="9su-BU-xOB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="soW-6s-rRn"/>
+                <constraint firstItem="9su-BU-xOB" firstAttribute="top" secondItem="PTl-if-Biu" secondAttribute="bottom" constant="550" id="tQ2-h5-xR9"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="9su-BU-xOB" secondAttribute="bottom" constant="10" id="vgh-Vr-tGM"/>
+                <constraint firstItem="Leg-9N-eth" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="wic-TO-TGg"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="-230.43478260869566" y="90.401785714285708"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic-gps" width="32" height="32"/>
+    </resources>
+</document>
