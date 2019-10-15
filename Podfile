@@ -11,6 +11,9 @@ target 'FinalProject' do
   pod 'RealmSwift'
   pod 'SDWebImage'
   pod 'YoutubePlayer-in-WKWebView'
+  pod 'GoogleMaps'
+  pod 'GooglePlaces'
+  pod 'SwiftyJSON'
 
   # Network
   pod 'Alamofire', '4.8.2' # Elegant HTTP Networking in Swift.

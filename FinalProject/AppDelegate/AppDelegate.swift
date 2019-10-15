@@ -5,7 +5,8 @@
 //  Created by Bien Le Q. on 8/26/19.
 //  Copyright © 2019 Asiantech. All rights reserved.
 //
-
+import GoogleMaps
+import GooglePlaces
 import UIKit
 
 @UIApplicationMain
@@ -19,11 +20,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.backgroundColor = .white
         window?.makeKeyAndVisible()
         configTabbar()
+        GMSServices.provideAPIKey(App.KeyUser.keyMap)
+        GMSPlacesClient.provideAPIKey(App.KeyUser.keyMap)
 
         return true
     }
 
     func configTabbar() {
+
+        let mapView = MapViewController()
+        let mapViewNaviVC = UINavigationController(rootViewController: mapView)
+        mapViewNaviVC.tabBarItem = UITabBarItem(title: "MAP", image: #imageLiteral(resourceName: "ic-map"), selectedImage: #imageLiteral(resourceName: "ic-map-filled"))
 
         let home = HomeViewController()
         let homeNaviVC = UINavigationController(rootViewController: home)
@@ -37,7 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let favoriteNaviVC = UINavigationController(rootViewController: favorite)
         favoriteNaviVC.tabBarItem = UITabBarItem(title: "Favorite", image: #imageLiteral(resourceName: "ic-heart"), selectedImage: #imageLiteral(resourceName: "ic-heart-filled"))
 
-        let viewControllers = [homeNaviVC, searchNaviVC, favoriteNaviVC]
+        let viewControllers = [homeNaviVC, searchNaviVC, favoriteNaviVC, mapViewNaviVC]
         let tabBarController = UITabBarController()
         tabBarController.viewControllers = viewControllers
         tabBarController.tabBar.tintColor = .red

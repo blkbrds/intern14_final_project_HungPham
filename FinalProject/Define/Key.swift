@@ -23,4 +23,5 @@ extension App.KeyUser {
     static let keyIdMusic = "AIzaSyCsTPfHJumgbKHEToQ1AVrAo161-QRxFCU".localized()
     static let keyIdAmazing = "AIzaSyA790TZ1NAfkubwNHUTOF0F2UfGK1dvKuI".localized()
     static let keyIdGaming = "AIzaSyDMzYJLHg_ynvI_EJHdqpU9qBsoOi3f95A".localized()
+    static let keyMap = "AIzaSyCsTPfHJumgbKHEToQ1AVrAo161-QRxFCU".localized()
 }
