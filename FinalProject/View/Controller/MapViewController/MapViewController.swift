@@ -2,8 +2,6 @@ import UIKit
 import GoogleMaps
 import CoreLocation
 import GooglePlaces
-import Alamofire
-import SwiftyJSON
 
 final class MapViewController: UIViewController {
 
@@ -52,13 +50,6 @@ final class MapViewController: UIViewController {
         }
     }
 
-    func drawPath(startLocation: CLLocation, endLocation: CLLocation) {
-        let origin = "\(startLocation.coordinate.latitude),\(startLocation.coordinate.longitude)"
-        let destination = "\(endLocation.coordinate.latitude),\(endLocation.coordinate.longitude)"
-
-        let url = ""
-    }
-
     @IBAction func currentLocationButton(_ sender: Any) {
         self.locationManager.startUpdatingLocation()
     }
@@ -82,7 +73,6 @@ extension MapViewController: GMSMapViewDelegate {
         customInfoWindow?.layer.backgroundColor = opaqueWhite.cgColor
         customInfoWindow?.layer.cornerRadius = 8
         customInfoWindow?.center = mapView.projection.point(for: position)
-//        customInfoWindow?.center.y -= 100
         customInfoWindow?.placeTitle.text = marker.title
         customInfoWindow?.placeSubTitle.text = marker.snippet
         customInfoWindow?.placeImageView.image = marker.icon
@@ -157,12 +147,5 @@ extension MapViewController: CustomInfoWindowDelegate {
 
     func tapDetail(_ infoView: CustomInfoWindow, sender: UIButton) {
         subView.alpha = 1
-    }
-}
-
-extension MapViewController: MapCellDelegate {
-
-    func tapRoute(_ mapCellView: MapCell, sender: UIButton) {
-        <#code#>
     }
 }

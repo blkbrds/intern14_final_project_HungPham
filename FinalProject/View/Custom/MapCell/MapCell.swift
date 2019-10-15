@@ -1,12 +1,6 @@
 import UIKit
 
-protocol MapCellDelegate: class {
-    func tapRoute(_ mapCellView: MapCell, sender: UIButton)
-}
-
 final class MapCell: UICollectionViewCell {
-
-    weak var delegate: MapCellDelegate?
 
     @IBOutlet weak var placeImageView: UIImageView!
     @IBOutlet weak var placeTitle: UILabel!
@@ -16,6 +10,6 @@ final class MapCell: UICollectionViewCell {
     @IBOutlet weak var placeShare: UIButton!
 
     @IBAction func directionRoute(_ sender: UIButton) {
-        delegate?.tapRoute(self, sender: sender)
+        print("Tapped !")
     }
 }
